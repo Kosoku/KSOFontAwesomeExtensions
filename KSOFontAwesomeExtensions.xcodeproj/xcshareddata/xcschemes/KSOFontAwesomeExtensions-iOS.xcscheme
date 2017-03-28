@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "073CF2F01E89CBFE006435C2"
                BuildableName = "KSOFontAwesomeExtensions.framework"
-               BlueprintName = "KSOFontAwesomeExtensions"
+               BlueprintName = "KSOFontAwesomeExtensions-iOS"
                ReferencedContainer = "container:KSOFontAwesomeExtensions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,7 +47,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "073CF2F01E89CBFE006435C2"
             BuildableName = "KSOFontAwesomeExtensions.framework"
-            BlueprintName = "KSOFontAwesomeExtensions"
+            BlueprintName = "KSOFontAwesomeExtensions-iOS"
             ReferencedContainer = "container:KSOFontAwesomeExtensions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -65,7 +65,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "073CF2F01E89CBFE006435C2"
             BuildableName = "KSOFontAwesomeExtensions.framework"
-            BlueprintName = "KSOFontAwesomeExtensions"
+            BlueprintName = "KSOFontAwesomeExtensions-iOS"
             ReferencedContainer = "container:KSOFontAwesomeExtensions.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

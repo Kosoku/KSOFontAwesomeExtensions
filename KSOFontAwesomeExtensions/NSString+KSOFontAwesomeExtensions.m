@@ -15,6 +15,8 @@
 
 #import "NSString+KSOFontAwesomeExtensions.h"
 
+#import <CoreText/CoreText.h>
+
 static NSDictionary *kFontAwesomeIconsToIdentifiers;
 static NSDictionary *kFontAwesomeIdentifiersToIcons;
 static NSDictionary *kFontAwesomeIconsToStrings;
@@ -49,6 +51,22 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
         kFontAwesomeIdentifiersToIcons = [identifiersToIcons copy];
         kFontAwesomeIconsToStrings = [iconsToStrings copy];
         kFontAwesomeIdentifiersToStrings = [identifiersToStrings copy];
+        
+        for (NSURL *URL in [[NSBundle mainBundle] URLsForResourcesWithExtension:@"ttf" subdirectory:nil]) {
+            NSData *data = [NSData dataWithContentsOfURL:URL options:NSDataReadingUncached error:NULL];
+            
+            if (data == nil) {
+                continue;
+            }
+            
+            CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
+            CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
+            
+            CTFontManagerRegisterGraphicsFont(font, NULL);
+            
+            CFRelease(font);
+            CFRelease(dataProvider);
+        }
     });
 }
 

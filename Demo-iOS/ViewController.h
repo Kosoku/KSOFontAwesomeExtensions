@@ -1,8 +1,8 @@
 //
-//  UIFont+KSOFontAwesomeExtensions.h
-//  KSOFontAwesomeExtensions
+//  ViewController.h
+//  Demo-iOS
 //
-//  Created by William Towe on 3/27/17.
+//  Created by William Towe on 3/28/17.
 //  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
@@ -15,28 +15,8 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@interface ViewController : UIViewController
 
-/**
- The default name for the Font Awesome font, which is "FontAwesome". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using setKSO_fontAwesomeFontName:.
- */
-FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameDefault;
-
-@interface UIFont (KSOFontAwesomeExtensions)
-
-/**
- Set and get the Font Awesome font name. Use this to set a name other than "FontAwesome" if necessary.
- */
-@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontName;
-
-/**
- Returns the Font Awesome font at the provided size.
- 
- @param size The font size
- @return The Font Awesome font
- */
-+ (UIFont *)KSO_fontAwesomeFontOfSize:(CGFloat)size;
 
 @end
 
-NS_ASSUME_NONNULL_END

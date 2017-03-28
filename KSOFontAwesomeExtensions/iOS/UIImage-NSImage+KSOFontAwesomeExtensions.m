@@ -13,6 +13,7 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#import <TargetConditionals.h>
 #if (TARGET_OS_IPHONE)
 #import "UIImage+KSOFontAwesomeExtensions.h"
 #import "UIFont+KSOFontAwesomeExtensions.h"
@@ -46,10 +47,10 @@
     CGFloat pointSize = KSOFontAwesomePointSizeAndRectForIconAndSize(text, size, &rect);
     
     if (foregroundColor == nil) {
-        foregroundColor = [UIApplication sharedApplication].keyWindow.tintColor;
+        foregroundColor = [UIApplication sharedApplication].keyWindow.tintColor ?: [UIColor colorWithRed:0 green:122.0/255.0 blue:1.0 alpha:1.0];
     }
     
-    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [UIFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
+    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
     
     UIImage *retval = UIGraphicsGetImageFromCurrentImageContext();
     
@@ -74,7 +75,7 @@
         foregroundColor = [NSColor colorForControlTint:[NSColor currentControlTint]];
     }
     
-    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [NSFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
+    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
     
     [retval unlockFocus];
     

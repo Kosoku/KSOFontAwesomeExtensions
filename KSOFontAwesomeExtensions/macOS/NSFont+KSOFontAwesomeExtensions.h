@@ -18,7 +18,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- The default name for the Font Awesome font, which is "FontAwesome". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using KSO_setFontAwesomeFontName:.
+ The default name for the Font Awesome font, which is "FontAwesome". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using setKSO_fontAwesomeFontName:.
  */
 FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameDefault;
 
