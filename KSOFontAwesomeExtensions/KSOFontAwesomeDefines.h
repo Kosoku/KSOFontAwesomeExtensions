@@ -16,6 +16,7 @@
 #ifndef __KSO_FONT_AWESOME_DEFINES__
 #define __KSO_FONT_AWESOME_DEFINES__
 
+#import <TargetConditionals.h>
 #import <Foundation/Foundation.h>
 
 #if (TARGET_OS_IPHONE)

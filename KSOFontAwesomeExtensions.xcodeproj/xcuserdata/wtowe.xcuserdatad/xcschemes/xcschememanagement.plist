@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>2</integer>
 		</dict>
+		<key>Demo-macOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>KSOFontAwesomeExtensions-iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -33,6 +38,11 @@
 			<true/>
 		</dict>
 		<key>07A41EAF1E8AD3A900F8451F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>07A41ED81E8AE02300F8451F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

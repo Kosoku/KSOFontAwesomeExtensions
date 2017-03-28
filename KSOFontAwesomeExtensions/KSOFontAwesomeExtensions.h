@@ -28,8 +28,6 @@ FOUNDATION_EXPORT const unsigned char KSOFontAwesomeExtensionsVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <KSOFontAwesomeExtensions/PublicHeader.h>
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeDefines.h>
 #import <KSOFontAwesomeExtensions/NSString+KSOFontAwesomeExtensions.h>
 #if (TARGET_OS_IPHONE)
 #import <KSOFontAwesomeExtensions/UIFont+KSOFontAwesomeExtensions.h>
