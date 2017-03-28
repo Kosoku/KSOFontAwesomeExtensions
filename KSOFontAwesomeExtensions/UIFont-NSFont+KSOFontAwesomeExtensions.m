@@ -1,5 +1,5 @@
 //
-//  KSOFontAwesomeExtensions.h
+//  UIFont+KSOFontAwesomeExtensions.m
 //  KSOFontAwesomeExtensions
 //
 //  Created by William Towe on 3/27/17.
@@ -13,20 +13,26 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#import "UIFont+KSOFontAwesomeExtensions.h"
+#import "KSOFontAwesomeDefines.h"
 
-//! Project version number for KSOFontAwesomeExtensions.
-FOUNDATION_EXPORT double KSOFontAwesomeExtensionsVersionNumber;
+#import <objc/runtime.h>
 
-//! Project version string for KSOFontAwesomeExtensions.
-FOUNDATION_EXPORT const unsigned char KSOFontAwesomeExtensionsVersionString[];
+static void const *kFontAwesomeFontNameKey = &kFontAwesomeFontNameKey;
 
-// In this header, you should import all the public headers of your framework using statements like #import <KSOFontAwesomeExtensions/PublicHeader.h>
+NSString *const KSOFontAwesomeFontNameDefault = @"FontAwesome";
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeDefines.h>
-#if (TARGET_OS_IPHONE)
-#import <KSOFontAwesomeExtensions/UIFont+KSOFontAwesomeExtensions.h>
-#else
-#import <KSOFontAwesomeExtensions/NSFont+KSOFontAwesomeExtensions.h>
-#endif
+@implementation UIFont (KSOFontAwesomeExtensions)
+
++ (NSString *)KSO_fontAwesomeFontName; {
+    return objc_getAssociatedObject(self, kFontAwesomeFontNameKey) ?: KSOFontAwesomeFontNameDefault;
+}
++ (void)setKSO_fontAwesomeFontName:(NSString *)fontName; {
+    objc_setAssociatedObject(self, kFontAwesomeFontNameKey, fontName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
++ (KSOFont *)KSO_fontAwesomeFontOfSize:(CGFloat)size; {
+    return [KSOFont fontWithName:[self KSO_fontAwesomeFontName] size:size];
+}
+
+@end

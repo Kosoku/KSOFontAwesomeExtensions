@@ -1,5 +1,5 @@
 //
-//  KSOFontAwesomeExtensions.h
+//  KSOFontAwesomeDefines.h
 //  KSOFontAwesomeExtensions
 //
 //  Created by William Towe on 3/27/17.
@@ -13,20 +13,31 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import <UIKit/UIKit.h>
+#ifndef __KSO_FONT_AWESOME_DEFINES__
+#define __KSO_FONT_AWESOME_DEFINES__
 
-//! Project version number for KSOFontAwesomeExtensions.
-FOUNDATION_EXPORT double KSOFontAwesomeExtensionsVersionNumber;
+#import <Foundation/Foundation.h>
 
-//! Project version string for KSOFontAwesomeExtensions.
-FOUNDATION_EXPORT const unsigned char KSOFontAwesomeExtensionsVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <KSOFontAwesomeExtensions/PublicHeader.h>
-
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeDefines.h>
 #if (TARGET_OS_IPHONE)
-#import <KSOFontAwesomeExtensions/UIFont+KSOFontAwesomeExtensions.h>
+#ifndef KSOSize
+#define KSOSize CGSize
+#endif
+#ifndef KSORect
+#define KSORect CGRect
+#endif
+#ifndef KSOFont
+#define KSOFont UIFont
+#endif
 #else
-#import <KSOFontAwesomeExtensions/NSFont+KSOFontAwesomeExtensions.h>
+#ifndef KSOSize
+#define KSOSize NSSize
+#endif
+#ifndef KSORect
+#define KSORect NSRect
+#endif
+#ifndef KSOFont
+#define KSOFont NSFont
+#endif
+#endif
+
 #endif

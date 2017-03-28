@@ -10,6 +10,11 @@
 		073CF2F61E89CBFE006435C2 /* KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B501E89E62300824A77 /* KSOFontAwesomeConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B511E89E62300824A77 /* KSOFontAwesomeConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B4F1E89E62300824A77 /* KSOFontAwesomeConstants.m */; };
+		07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */; };
+		07E83B561E89EB0500824A77 /* KSOFontAwesomeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07E83B571E89EB0500824A77 /* KSOFontAwesomeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */; };
+		07E83B5B1E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B591E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,12 @@
 		073CF2FC1E89CC9B006435C2 /* KSOFontAwesomeExtensions-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOFontAwesomeExtensions-Info.h"; sourceTree = "<group>"; };
 		07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeConstants.h; sourceTree = "<group>"; };
 		07E83B4F1E89E62300824A77 /* KSOFontAwesomeConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSOFontAwesomeConstants.m; sourceTree = "<group>"; };
+		07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeDefines.h; sourceTree = "<group>"; };
+		07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeFunctions.h; sourceTree = "<group>"; };
+		07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSOFontAwesomeFunctions.m; sourceTree = "<group>"; };
+		07E83B591E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+KSOFontAwesomeExtensions.h"; path = "iOS/UIFont+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
+		07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont-NSFont+KSOFontAwesomeExtensions.m"; sourceTree = "<group>"; };
+		07E83B5D1E89ED8200824A77 /* NSFont+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFont+KSOFontAwesomeExtensions.h"; path = "macOS/NSFont+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +83,22 @@
 			children = (
 				07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */,
 				07E83B4F1E89E62300824A77 /* KSOFontAwesomeConstants.m */,
+				07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */,
+				07E83B591E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h */,
+				07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */,
+				07E83B5D1E89ED8200824A77 /* NSFont+KSOFontAwesomeExtensions.h */,
+				07E83B581E89EB0A00824A77 /* Private */,
 			);
 			name = Source;
+			sourceTree = "<group>";
+		};
+		07E83B581E89EB0A00824A77 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */,
+				07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */,
+			);
+			path = Private;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +108,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */,
+				07E83B5B1E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h in Headers */,
+				07E83B561E89EB0500824A77 /* KSOFontAwesomeFunctions.h in Headers */,
 				073CF2F61E89CBFE006435C2 /* KSOFontAwesomeExtensions.h in Headers */,
 				07E83B501E89E62300824A77 /* KSOFontAwesomeConstants.h in Headers */,
 			);
@@ -115,7 +143,9 @@
 		073CF2E61E89CBBB006435C2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KSO;
 				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Kosoku Interactive, LLC.";
 				TargetAttributes = {
 					073CF2F01E89CBFE006435C2 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -155,6 +185,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
+				07E83B571E89EB0500824A77 /* KSOFontAwesomeFunctions.m in Sources */,
 				07E83B511E89E62300824A77 /* KSOFontAwesomeConstants.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

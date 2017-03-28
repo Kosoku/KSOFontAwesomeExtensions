@@ -1,5 +1,5 @@
 //
-//  KSOFontAwesomeExtensions.h
+//  UIFont+KSOFontAwesomeExtensions.h
 //  KSOFontAwesomeExtensions
 //
 //  Created by William Towe on 3/27/17.
@@ -15,18 +15,28 @@
 
 #import <UIKit/UIKit.h>
 
-//! Project version number for KSOFontAwesomeExtensions.
-FOUNDATION_EXPORT double KSOFontAwesomeExtensionsVersionNumber;
+NS_ASSUME_NONNULL_BEGIN
 
-//! Project version string for KSOFontAwesomeExtensions.
-FOUNDATION_EXPORT const unsigned char KSOFontAwesomeExtensionsVersionString[];
+/**
+ The default name for the Font Awesome font, which is "FontAwesome". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using BB_setFontAwesomeFontName:.
+ */
+FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameDefault;
 
-// In this header, you should import all the public headers of your framework using statements like #import <KSOFontAwesomeExtensions/PublicHeader.h>
+@interface UIFont (KSOFontAwesomeExtensions)
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeDefines.h>
-#if (TARGET_OS_IPHONE)
-#import <KSOFontAwesomeExtensions/UIFont+KSOFontAwesomeExtensions.h>
-#else
-#import <KSOFontAwesomeExtensions/NSFont+KSOFontAwesomeExtensions.h>
-#endif
+/**
+ Set and get the Font Awesome font name. Use this to set a name other than "FontAwesome" if necessary.
+ */
+@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontName;
+
+/**
+ Returns the Font Awesome font at the provided size.
+ 
+ @param size The font size
+ @return The Font Awesome font
+ */
++ (UIFont *)KSO_fontAwesomeFontOfSize:(CGFloat)size;
+
+@end
+
+NS_ASSUME_NONNULL_END
