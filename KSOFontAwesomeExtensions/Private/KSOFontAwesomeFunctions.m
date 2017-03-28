@@ -22,7 +22,7 @@
 
 #import <Stanley/KSTGeometryFunctions.h>
 
-CGFloat BBFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize size, KSORect *outRect) {
+CGFloat KSOFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize size, KSORect *outRect) {
     CGFloat pointSize = MIN(size.width, size.height);
     KSOSize textSize = [text sizeWithAttributes:@{NSFontAttributeName: [UIFont KSO_fontAwesomeFontOfSize:pointSize]}];
     

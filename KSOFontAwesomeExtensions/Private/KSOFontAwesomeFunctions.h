@@ -23,6 +23,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT CGFloat BBFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize size, KSORect *outRect);
+FOUNDATION_EXPORT CGFloat KSOFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize size, KSORect *outRect);
 
 NS_ASSUME_NONNULL_END

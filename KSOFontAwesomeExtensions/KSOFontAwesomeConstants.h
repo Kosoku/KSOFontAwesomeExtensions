@@ -128,7 +128,7 @@ typedef NS_ENUM(NSInteger, KSOFontAwesomeIcon) {
     KSOFontAwesomeIconStar,
     KSOFontAwesomeIconUser,
     
-    BB_FONT_AWESOME_ICON_TOTAL_ICONS
+    KSO_FONT_AWESOME_ICON_TOTAL_ICONS
 };
 
 /**
