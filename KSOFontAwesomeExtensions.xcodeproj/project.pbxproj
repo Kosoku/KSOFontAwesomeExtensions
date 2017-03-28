@@ -15,6 +15,7 @@
 		07E83B571E89EB0500824A77 /* KSOFontAwesomeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */; };
 		07E83B5B1E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B591E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */; };
+		07E83B631E89EF8B00824A77 /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E83B621E89EF8B00824A77 /* Stanley.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		07E83B591E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+KSOFontAwesomeExtensions.h"; path = "iOS/UIFont+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
 		07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont-NSFont+KSOFontAwesomeExtensions.m"; sourceTree = "<group>"; };
 		07E83B5D1E89ED8200824A77 /* NSFont+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFont+KSOFontAwesomeExtensions.h"; path = "macOS/NSFont+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
+		07E83B621E89EF8B00824A77 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07E83B631E89EF8B00824A77 /* Stanley.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +51,7 @@
 			children = (
 				073CF2F31E89CBFE006435C2 /* KSOFontAwesomeExtensions */,
 				073CF2F21E89CBFE006435C2 /* Products */,
+				07E83B611E89EF8B00824A77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +103,14 @@
 				07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */,
 			);
 			path = Private;
+			sourceTree = "<group>";
+		};
+		07E83B611E89EF8B00824A77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07E83B621E89EF8B00824A77 /* Stanley.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +250,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Stanley/build/Debug-iphoneos",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -256,7 +272,7 @@
 				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions-Info.h";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -302,6 +318,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Stanley/build/Debug-iphoneos",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -314,7 +334,7 @@
 				INFOPLIST_PREFIX_HEADER = "$(SRCROOT)/KSOFontAwesomeExtensions/KSOFontAwesomeExtensions-Info.h";
 				INFOPLIST_PREPROCESS = YES;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kosoku.ksofontawesomeextensions;
