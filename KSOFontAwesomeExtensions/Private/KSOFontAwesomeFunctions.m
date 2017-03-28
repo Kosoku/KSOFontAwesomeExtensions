@@ -24,14 +24,14 @@
 
 CGFloat KSOFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize size, KSORect *outRect) {
     CGFloat pointSize = MIN(size.width, size.height);
-    KSOSize textSize = [text sizeWithAttributes:@{NSFontAttributeName: [UIFont KSO_fontAwesomeFontOfSize:pointSize]}];
+    KSOSize textSize = [text sizeWithAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize]}];
     
     while (textSize.width <= size.width &&
            textSize.height <= size.height) {
         
         pointSize++;
         
-        textSize = [text sizeWithAttributes:@{NSFontAttributeName: [UIFont KSO_fontAwesomeFontOfSize:pointSize]}];
+        textSize = [text sizeWithAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize]}];
     }
     
     while (textSize.width > size.width ||
@@ -39,7 +39,7 @@ CGFloat KSOFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize siz
         
         pointSize--;
 
-        textSize = [text sizeWithAttributes:@{NSFontAttributeName: [UIFont KSO_fontAwesomeFontOfSize:pointSize]}];
+        textSize = [text sizeWithAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize]}];
     }
     
     KSORect rect;

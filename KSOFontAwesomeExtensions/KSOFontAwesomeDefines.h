@@ -19,6 +19,7 @@
 #import <Foundation/Foundation.h>
 
 #if (TARGET_OS_IPHONE)
+
 #ifndef KSOSize
 #define KSOSize CGSize
 #endif
@@ -28,7 +29,15 @@
 #ifndef KSOFont
 #define KSOFont UIFont
 #endif
+#ifndef KSOImage
+#define KSOImage UIImage
+#endif
+#ifndef KSOColor
+#define KSOColor UIColor
+#endif
+
 #else
+
 #ifndef KSOSize
 #define KSOSize NSSize
 #endif
@@ -38,6 +47,13 @@
 #ifndef KSOFont
 #define KSOFont NSFont
 #endif
+#ifndef KSOImage
+#define KSOImage NSImage
+#endif
+#ifndef KSOColor
+#define KSOColor NSColor
+#endif
+
 #endif
 
 #endif

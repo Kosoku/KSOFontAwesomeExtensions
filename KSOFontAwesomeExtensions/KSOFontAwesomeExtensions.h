@@ -28,6 +28,9 @@ FOUNDATION_EXPORT const unsigned char KSOFontAwesomeExtensionsVersionString[];
 #import <KSOFontAwesomeExtensions/NSString+KSOFontAwesomeExtensions.h>
 #if (TARGET_OS_IPHONE)
 #import <KSOFontAwesomeExtensions/UIFont+KSOFontAwesomeExtensions.h>
+#import <KSOFontAwesomeExtensions/UIImage+KSOFontAwesomeExtensions.h>
+#import <KSOFontAwesomeExtensions/UIButton+KSOFontAwesomeExtensions.h>
 #else
 #import <KSOFontAwesomeExtensions/NSFont+KSOFontAwesomeExtensions.h>
+#import <KSOFontAwesomeExtensions/NSImage+KSOFontAwesomeExtensions.h>
 #endif

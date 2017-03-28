@@ -13,21 +13,27 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
+#if (TARGET_OS_IPHONE)
 #import "UIImage+KSOFontAwesomeExtensions.h"
+#import "UIFont+KSOFontAwesomeExtensions.h"
+#else
+#import "NSImage+KSOFontAwesomeExtensions.h"
+#import "NSFont+KSOFontAwesomeExtensions.h"
+#endif
 #import "KSOFontAwesomeDefines.h"
 #import "NSString+KSOFontAwesomeExtensions.h"
 #import "KSOFontAwesomeFunctions.h"
-#import "UIFont+KSOFontAwesomeExtensions.h"
 
-@implementation UIImage (KSOFontAwesomeExtensions)
+@implementation KSOImage (KSOFontAwesomeExtensions)
 
-+ (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon size:(KSOSize)size; {
     return [self KSO_fontAwesomeImageWithIcon:icon foregroundColor:nil backgroundColor:nil size:size];
 }
-+ (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(UIColor *)foregroundColor size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(KSOColor *)foregroundColor size:(CGSize)size; {
     return [self KSO_fontAwesomeImageWithIcon:icon foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
-+ (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(UIColor *)foregroundColor backgroundColor:(UIColor *)backgroundColor size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(KSOColor *)foregroundColor backgroundColor:(KSOColor *)backgroundColor size:(CGSize)size; {
+#if (TARGET_OS_IPHONE)
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
     if (backgroundColor != nil) {
@@ -50,6 +56,30 @@
     UIGraphicsEndImageContext();
     
     return retval;
+#else
+    NSImage *retval = [[NSImage alloc] initWithSize:size];
+    
+    [retval lockFocus];
+    
+    if (backgroundColor != nil) {
+        [backgroundColor setFill];
+        NSRectFill(NSMakeRect(0, 0, size.width, size.height));
+    }
+    
+    NSString *text = [NSString KSO_fontAwesomeStringForIcon:icon];
+    NSRect rect;
+    CGFloat pointSize = KSOFontAwesomePointSizeAndRectForIconAndSize(text, size, &rect);
+    
+    if (foregroundColor == nil) {
+        foregroundColor = [NSColor colorForControlTint:[NSColor currentControlTint]];
+    }
+    
+    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [NSFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
+    
+    [retval unlockFocus];
+    
+    return retval;
+#endif
 }
 
 @end
