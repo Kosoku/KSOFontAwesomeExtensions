@@ -1,7 +1,7 @@
 ## KSOFontAwesomeExtensions
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![Version](http://img.shields.io/cocoapods/v/Stanley.svg)](http://cocoapods.org/?q=KSOFontAwesomeExtensions)
+[![Version](http://img.shields.io/cocoapods/v/KSOFontAwesomeExtensions.svg)](http://cocoapods.org/?q=KSOFontAwesomeExtensions)
 [![Platform](http://img.shields.io/cocoapods/p/KSOFontAwesomeExtensions.svg)]()
 [![License](http://img.shields.io/cocoapods/l/KSOFontAwesomeExtensions.svg)](https://github.com/Kosoku/KSOFontAwesomeExtensions/blob/master/license.txt)
 
