@@ -47,7 +47,13 @@
     CGFloat pointSize = KSOFontAwesomePointSizeAndRectForIconAndSize(text, size, &rect);
     
     if (foregroundColor == nil) {
-        foregroundColor = [UIApplication sharedApplication].keyWindow.tintColor ?: [UIColor colorWithRed:0 green:122.0/255.0 blue:1.0 alpha:1.0];
+        UIColor *defaultColor = [UIColor colorWithRed:0 green:122.0/255.0 blue:1.0 alpha:1.0];
+        
+#if (TARGET_OS_WATCH)
+        foregroundColor = defaultColor;
+#else
+        foregroundColor = [UIApplication sharedApplication].keyWindow.tintColor ?: defaultColor;
+#endif
     }
     
     [text drawInRect:rect withAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];

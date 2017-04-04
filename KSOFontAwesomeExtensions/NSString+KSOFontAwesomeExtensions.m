@@ -248,44 +248,41 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
 @implementation NSString (KSOFontAwesomeExtensions)
 
 + (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSMutableDictionary *iconsToIdentifiers = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *identifiersToIcons = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *iconsToStrings = [[NSMutableDictionary alloc] init];
-        NSMutableDictionary *identifiersToStrings = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *iconsToIdentifiers = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *identifiersToIcons = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *iconsToStrings = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary *identifiersToStrings = [[NSMutableDictionary alloc] init];
+    
+    for (NSInteger i=0; i<KSO_FONT_AWESOME_ICON_TOTAL_ICONS; i++) {
+        NSString *identifier = [self _KSO_fontAwesomeIdentifierForIcon:i];
+        NSString *string = [self _KSO_fontAwesomeStringForIcon:i];
         
-        for (NSInteger i=0; i<KSO_FONT_AWESOME_ICON_TOTAL_ICONS; i++) {
-            NSString *identifier = [self _KSO_fontAwesomeIdentifierForIcon:i];
-            NSString *string = [self _KSO_fontAwesomeStringForIcon:i];
-            
-            [iconsToIdentifiers setObject:identifier forKey:@(i)];
-            [identifiersToIcons setObject:@(i) forKey:identifier];
-            [iconsToStrings setObject:string forKey:@(i)];
-            [identifiersToStrings setObject:string forKey:identifier];
+        [iconsToIdentifiers setObject:identifier forKey:@(i)];
+        [identifiersToIcons setObject:@(i) forKey:identifier];
+        [iconsToStrings setObject:string forKey:@(i)];
+        [identifiersToStrings setObject:string forKey:identifier];
+    }
+    
+    kFontAwesomeIconsToIdentifiers = [iconsToIdentifiers copy];
+    kFontAwesomeIdentifiersToIcons = [identifiersToIcons copy];
+    kFontAwesomeIconsToStrings = [iconsToStrings copy];
+    kFontAwesomeIdentifiersToStrings = [identifiersToStrings copy];
+    
+    for (NSURL *URL in [[NSBundle mainBundle] URLsForResourcesWithExtension:@"ttf" subdirectory:nil]) {
+        NSData *data = [NSData dataWithContentsOfURL:URL options:NSDataReadingUncached error:NULL];
+        
+        if (data == nil) {
+            continue;
         }
         
-        kFontAwesomeIconsToIdentifiers = [iconsToIdentifiers copy];
-        kFontAwesomeIdentifiersToIcons = [identifiersToIcons copy];
-        kFontAwesomeIconsToStrings = [iconsToStrings copy];
-        kFontAwesomeIdentifiersToStrings = [identifiersToStrings copy];
+        CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
+        CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
         
-        for (NSURL *URL in [[NSBundle mainBundle] URLsForResourcesWithExtension:@"ttf" subdirectory:nil]) {
-            NSData *data = [NSData dataWithContentsOfURL:URL options:NSDataReadingUncached error:NULL];
-            
-            if (data == nil) {
-                continue;
-            }
-            
-            CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)data);
-            CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
-            
-            CTFontManagerRegisterGraphicsFont(font, NULL);
-            
-            CFRelease(font);
-            CFRelease(dataProvider);
-        }
-    });
+        CTFontManagerRegisterGraphicsFont(font, NULL);
+        
+        CFRelease(font);
+        CFRelease(dataProvider);
+    }
 }
 
 + (NSString *)KSO_fontAwesomeIdentifierForIcon:(KSOFontAwesomeIcon)icon; {
