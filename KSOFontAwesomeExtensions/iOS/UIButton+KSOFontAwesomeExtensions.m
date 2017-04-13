@@ -54,7 +54,7 @@ static const void *kFontAwesomeSizeKey = &kFontAwesomeSizeKey;
 - (KSOFontAwesomeIcon)KSO_fontAwesomeIcon {
     return [NSString KSO_fontAwesomeIconForIdentifier:self.KSO_fontAwesomeIdentifier];
 }
-- (void)KSO_setFontAwesomeIcon:(KSOFontAwesomeIcon)KSO_fontAwesomeIcon {
+- (void)setKSO_fontAwesomeIcon:(KSOFontAwesomeIcon)KSO_fontAwesomeIcon {
     [self setKSO_fontAwesomeIdentifier:[NSString KSO_fontAwesomeIdentifierForIcon:KSO_fontAwesomeIcon]];
 }
 
