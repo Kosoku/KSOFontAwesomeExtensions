@@ -123,6 +123,8 @@ typedef NS_ENUM(NSInteger, KSOFontAwesomeIcon) {
     KSOFontAwesomeIconCalendarPlusO,
     KSOFontAwesomeIconCalendarTimesO,
     
+    KSOFontAwesomeIconFire,
+    
     KSOFontAwesomeIconPlus,
     KSOFontAwesomeIconQuestionCircleO,
     KSOFontAwesomeIconStar,
@@ -237,6 +239,8 @@ extern const struct KSOFontAwesomeIdentifier {
     __unsafe_unretained NSString *iconCalendarPlusO;
     __unsafe_unretained NSString *iconCalendarTimesO;
     
+    __unsafe_unretained NSString *iconFire;
+    
     __unsafe_unretained NSString *iconPlus;
     __unsafe_unretained NSString *iconQuestionCircleO;
     __unsafe_unretained NSString *iconStar;
@@ -348,6 +352,8 @@ extern const struct KSOFontAwesomeString {
     __unsafe_unretained NSString *iconCalendarMinusO;
     __unsafe_unretained NSString *iconCalendarPlusO;
     __unsafe_unretained NSString *iconCalendarTimesO;
+    
+    __unsafe_unretained NSString *iconFire;
     
     __unsafe_unretained NSString *iconPlus;
     __unsafe_unretained NSString *iconQuestionCircleO;
