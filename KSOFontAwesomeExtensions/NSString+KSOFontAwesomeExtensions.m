@@ -126,6 +126,7 @@ const struct KSOFontAwesomeIdentifier KSOFontAwesomeIdentifier = {
     
     .iconPlus = @"fa-plus",
     .iconQuestionCircleO = @"fa-question-circle-o",
+    .iconSearch = @"fa-search",
     .iconStar = @"fa-star",
     .iconUser = @"fa-user"
 };
@@ -239,6 +240,7 @@ const struct KSOFontAwesomeString KSOFontAwesomeString = {
     
     .iconPlus = @"\uf067",
     .iconQuestionCircleO = @"\uf29c",
+    .iconSearch = @"\uf002",
     .iconStar = @"\uf005",
     .iconUser = @"\uf007"
 };
@@ -527,6 +529,8 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
             return KSOFontAwesomeIdentifier.iconPlus;
         case KSOFontAwesomeIconQuestionCircleO:
             return KSOFontAwesomeIdentifier.iconQuestionCircleO;
+        case KSOFontAwesomeIconSearch:
+            return KSOFontAwesomeIdentifier.iconSearch;
         case KSOFontAwesomeIconStar:
             return KSOFontAwesomeIdentifier.iconStar;
         case KSOFontAwesomeIconUser:
@@ -751,6 +755,8 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
             return KSOFontAwesomeString.iconPlus;
         case KSOFontAwesomeIconQuestionCircleO:
             return KSOFontAwesomeString.iconQuestionCircleO;
+        case KSOFontAwesomeIconSearch:
+            return KSOFontAwesomeString.iconSearch;
         case KSOFontAwesomeIconStar:
             return KSOFontAwesomeString.iconStar;
         case KSOFontAwesomeIconUser:
