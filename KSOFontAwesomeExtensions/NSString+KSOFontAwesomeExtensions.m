@@ -120,7 +120,9 @@ const struct KSOFontAwesomeIdentifier KSOFontAwesomeIdentifier = {
     .iconCalendarPlusO = @"fa-calendar-plus-o",
     .iconCalendarTimesO = @"fa-calendar-times-o",
     
+    .iconCog = @"fa-cog",
     .iconFire = @"fa-fire",
+    .iconHeart = @"fa-heart",
     
     .iconPlus = @"fa-plus",
     .iconQuestionCircleO = @"fa-question-circle-o",
@@ -231,7 +233,9 @@ const struct KSOFontAwesomeString KSOFontAwesomeString = {
     .iconCalendarPlusO = @"\uf271",
     .iconCalendarTimesO = @"\uf273",
     
+    .iconCog = @"\uf013",
     .iconFire = @"\uf06d",
+    .iconHeart = @"\uf004",
     
     .iconPlus = @"\uf067",
     .iconQuestionCircleO = @"\uf29c",
@@ -512,8 +516,12 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
         case KSOFontAwesomeIconCalendarTimesO:
             return KSOFontAwesomeIdentifier.iconCalendarTimesO;
             
+        case KSOFontAwesomeIconCog:
+            return KSOFontAwesomeIdentifier.iconCog;
         case KSOFontAwesomeIconFire:
             return KSOFontAwesomeIdentifier.iconFire;
+        case KSOFontAwesomeIconHeart:
+            return KSOFontAwesomeIdentifier.iconHeart;
             
         case KSOFontAwesomeIconPlus:
             return KSOFontAwesomeIdentifier.iconPlus;
@@ -732,8 +740,12 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
         case KSOFontAwesomeIconCalendarTimesO:
             return KSOFontAwesomeString.iconCalendarTimesO;
             
+        case KSOFontAwesomeIconCog:
+            return KSOFontAwesomeString.iconCog;
         case KSOFontAwesomeIconFire:
             return KSOFontAwesomeString.iconFire;
+        case KSOFontAwesomeIconHeart:
+            return KSOFontAwesomeString.iconHeart;
             
         case KSOFontAwesomeIconPlus:
             return KSOFontAwesomeString.iconPlus;
