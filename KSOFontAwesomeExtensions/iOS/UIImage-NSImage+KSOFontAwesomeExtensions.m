@@ -68,7 +68,7 @@
     
     [text drawInRect:rect withAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
     
-    UIImage *retval = UIGraphicsGetImageFromCurrentImageContext();
+    UIImage *retval = [UIGraphicsGetImageFromCurrentImageContext() imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     UIGraphicsEndImageContext();
     
