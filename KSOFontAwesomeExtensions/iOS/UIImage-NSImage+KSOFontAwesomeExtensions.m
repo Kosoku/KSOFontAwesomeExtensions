@@ -30,10 +30,20 @@
 + (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon size:(KSOSize)size; {
     return [self KSO_fontAwesomeImageWithIcon:icon foregroundColor:nil backgroundColor:nil size:size];
 }
-+ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(KSOColor *)foregroundColor size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size; {
     return [self KSO_fontAwesomeImageWithIcon:icon foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
-+ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(KSOColor *)foregroundColor backgroundColor:(KSOColor *)backgroundColor size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(KSOColor *)foregroundColor backgroundColor:(KSOColor *)backgroundColor size:(KSOSize)size; {
+    return [self KSO_fontAwesomeImageWithString:[NSString KSO_fontAwesomeStringForIcon:icon] foregroundColor:foregroundColor backgroundColor:backgroundColor size:size];
+}
+
++ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string size:(KSOSize)size {
+    return [self KSO_fontAwesomeImageWithString:string foregroundColor:nil backgroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size {
+    return [self KSO_fontAwesomeImageWithString:string foregroundColor:foregroundColor backgroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor backgroundColor:(KSOColor *)backgroundColor size:(KSOSize)size {
 #if (TARGET_OS_IPHONE)
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
@@ -42,7 +52,7 @@
         UIRectFill(CGRectMake(0, 0, size.width, size.height));
     }
     
-    NSString *text = [NSString KSO_fontAwesomeStringForIcon:icon];
+    NSString *text = string;
     CGRect rect;
     CGFloat pointSize = KSOFontAwesomePointSizeAndRectForIconAndSize(text, size, &rect);
     
@@ -73,7 +83,7 @@
         NSRectFill(NSMakeRect(0, 0, size.width, size.height));
     }
     
-    NSString *text = [NSString KSO_fontAwesomeStringForIcon:icon];
+    NSString *text = string;
     NSRect rect;
     CGFloat pointSize = KSOFontAwesomePointSizeAndRectForIconAndSize(text, size, &rect);
     

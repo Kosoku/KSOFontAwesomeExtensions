@@ -33,21 +33,55 @@ NS_ASSUME_NONNULL_BEGIN
  Calls `KSO_fontAwesomeImageWithIcon:foregroundColor:backgroundColor:size:`, passing icon, foregroundColor, nil, and size.
  
  @param icon The Font Awesome icon
- @param foregroundColor The foreground color of the image
+ @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
  @param size The desired size of the image
  @return The Font Awesome image
  */
 + (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
 /**
- Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
+ Draws the Font Awesome string for the provided icon into a graphics context of the provided size using the provided foreground and background colors.
  
  @param icon The Font Awesome icon
- @param foregroundColor The foreground color of the image, the default is [UIColor blackColor]
+ @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
  @param backgroundColor The background color of the image
  @param size The desired size of the image
  @return The Font Awesome image
  */
 + (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(nullable UIColor *)foregroundColor backgroundColor:(nullable UIColor *)backgroundColor size:(CGSize)size;
+
+/**
+ Calls `[self KSO_fontAwesomeImageWithString:string foregroundColor:nil backgroundColor:nil size:size]`.
+ 
+ The string should be in Unicode escaped form (e.g. @"\uf26e").
+ 
+ @param string The Font Awesome string
+ @param size The desired size of the image
+ @return The Font Awesome image
+ */
++ (UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string size:(CGSize)size;
+/**
+ Calls `[self KSO_fontAwesomeImageWithString:string foregroundColor:foregroundColor backgroundColor:nil size:size]`.
+ 
+ The string should be in Unicode escaped form (e.g. @"\uf26e").
+ 
+ @param string The Font Awesome string
+ @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
+ @param size The desired size of the image
+ @return The Font Awesome image
+ */
++ (UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
+/**
+ Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
+ 
+ The string should be in Unicode escaped form (e.g. @"\uf26e").
+ 
+ @param string The Font Awesome string
+ @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
+ @param backgroundColor The background color of the image
+ @param size The desired size of the image
+ @return The Font Awesome image
+ */
++ (UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor backgroundColor:(nullable UIColor *)backgroundColor size:(CGSize)size;
 
 @end
 
