@@ -7,11 +7,11 @@
 
 A collection of categories on `NSString`, `UIFont`, 'NSFont', 'NSImage' and `UIImage` to make creation of images using the Font Awesome font easier.
 
-It relies on the [Stanley](https://github.com/Kosoku/Stanley) framework.
-
 ### Installation
 
 You can install *KSOFontAwesomeExtensions* using [cocoapods](https://cocoapods.org/), [Carthage](https://github.com/Carthage/Carthage), or as a framework. When installing as a framework, ensure you also link to [Stanley](https://github.com/Kosoku/Stanley) as *KSOFontAwesomeExtensions* relies on it.
+
+You must also include the *FontAwesome.ttf* font in your application bundle which can be found at [http://fontawesome.io/](http://fontawesome.io/).
 
 ### Dependencies
 
