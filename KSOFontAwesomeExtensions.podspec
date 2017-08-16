@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KSOFontAwesomeExtensions'
-  s.version          = '0.8.0'
+  s.version          = '0.9.0'
   s.summary          = 'A collection of categories on NSString, UIFont/NSFont and UIImage/NSImage to make creation of images using the Font Awesome font easier.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage`, and `UI
   s.source           = { :git => 'https://github.com/Kosoku/KSOFontAwesomeExtensions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.0'
   s.osx.deployment_target = '10.12'
   s.tvos.deployment_target = '10.0'
   s.watchos.deployment_target = '3.0'
