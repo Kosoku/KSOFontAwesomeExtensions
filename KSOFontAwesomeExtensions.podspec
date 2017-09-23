@@ -23,7 +23,7 @@ A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage`, and `UI
 
   s.homepage         = 'https://github.com/Kosoku/KSOFontAwesomeExtensions'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'license.txt' }
+  s.license          = { :type => 'BSD', :file => 'license.txt' }
   s.author           = { 'William Towe' => 'willbur1984@gmail.com' }
   s.source           = { :git => 'https://github.com/Kosoku/KSOFontAwesomeExtensions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
