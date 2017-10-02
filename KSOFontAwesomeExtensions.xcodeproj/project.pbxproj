@@ -817,6 +817,7 @@
 					};
 					0723C3431E9422AB0008BA3A = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 74KPPW2K35;
 						ProvisioningStyle = Automatic;
 					};
 					0723C34F1E9422AB0008BA3A = {
@@ -1289,7 +1290,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1336,7 +1337,7 @@
 				INFOPLIST_FILE = "Demo-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-tvOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-tvOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
@@ -1522,7 +1523,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-iOS.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1569,7 +1570,7 @@
 				INFOPLIST_FILE = "Demo-watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-iOS.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1604,6 +1605,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 74KPPW2K35;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1624,7 +1626,7 @@
 				INFOPLIST_FILE = "Demo-watchOS/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-iOS.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1658,6 +1660,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 74KPPW2K35;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1671,7 +1674,7 @@
 				IBSC_MODULE = Demo_watchOS_Extension;
 				INFOPLIST_FILE = "Demo-watchOS/Info.plist";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-iOS.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1998,7 +2001,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2044,7 +2047,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2099,7 +2102,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -2145,7 +2148,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.Demo-macOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kosoku.KSOFontAwesomeExtensions.Demo-macOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
