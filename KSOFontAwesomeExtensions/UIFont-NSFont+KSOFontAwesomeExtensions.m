@@ -40,7 +40,7 @@ static void const *kFontAwesomeFontNameKey = &kFontAwesomeFontNameKey;
     KSOFont *retval = [KSOFont fontWithName:[self KSO_fontAwesomeFontName] size:size];
     
 #if (TARGET_OS_WATCH)
-    NSAssert(retval != nil, @"Unable to find font named %@! Add the %@ font to your watchOS app target and watchOS extension target, as well as include it in the Info.plist of both targets using the UIAppFonts key ",[self KSO_fontAwesomeFontName],[self KSO_fontAwesomeFontName]);
+    NSAssert(retval != nil, @"Unable to find font named %@! Add the %@ font to your watchOS app target and watchOS extension target, as well as include it in the Info.plist of both targets using the UIAppFonts key",[self KSO_fontAwesomeFontName],[self KSO_fontAwesomeFontName]);
 #else
     NSAssert(retval != nil, @"Unable to find font named %@!",[self KSO_fontAwesomeFontName]);
 #endif
