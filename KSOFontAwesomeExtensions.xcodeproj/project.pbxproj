@@ -30,7 +30,6 @@
 		0723C3251E941CB30008BA3A /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41E861E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m */; };
 		0723C3261E941CB30008BA3A /* UIButton+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41E8A1E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.m */; };
 		0723C3271E941CB30008BA3A /* KSOFontAwesomeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */; };
-		0723C3281E941D9F0008BA3A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A41ED31E8ADCF600F8451F /* FontAwesome.ttf */; };
 		0723C3371E9421F80008BA3A /* KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0723C3381E9421F80008BA3A /* KSOFontAwesomeConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0723C3391E9421F80008BA3A /* KSOFontAwesomeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -55,7 +54,6 @@
 		0723C36F1E9422D70008BA3A /* KSOFontAwesomeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C32E1E94210A0008BA3A /* KSOFontAwesomeExtensions.framework */; };
 		0723C3701E9422D70008BA3A /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C32E1E94210A0008BA3A /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0723C3761E9423BF0008BA3A /* TableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0723C3751E9423BF0008BA3A /* TableRowController.m */; };
-		0723C3791E9432F80008BA3A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A41ED31E8ADCF600F8451F /* FontAwesome.ttf */; };
 		073CF2F61E89CBFE006435C2 /* KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A41E831E8AC97F00F8451F /* NSString+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A41E811E8AC97F00F8451F /* NSString+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A41E841E8AC97F00F8451F /* NSString+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41E821E8AC97F00F8451F /* NSString+KSOFontAwesomeExtensions.m */; };
@@ -85,7 +83,6 @@
 		07A41EC81E8AD51000F8451F /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 073CF2F11E89CBFE006435C2 /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07A41ECD1E8AD51400F8451F /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41ECC1E8AD51400F8451F /* Stanley.framework */; };
 		07A41ECE1E8AD51400F8451F /* Stanley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41ECC1E8AD51400F8451F /* Stanley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		07A41ED41E8ADCF600F8451F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A41ED31E8ADCF600F8451F /* FontAwesome.ttf */; };
 		07A41EDD1E8AE02300F8451F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41EDC1E8AE02300F8451F /* AppDelegate.m */; };
 		07A41EE01E8AE02300F8451F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41EDF1E8AE02300F8451F /* main.m */; };
 		07A41EE31E8AE02300F8451F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41EE21E8AE02300F8451F /* ViewController.m */; };
@@ -95,7 +92,18 @@
 		07A41EEE1E8AE02C00F8451F /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41E941E8ACE1700F8451F /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07A41EF21E8AE03100F8451F /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41ECC1E8AD51400F8451F /* Stanley.framework */; };
 		07A41EF31E8AE03100F8451F /* Stanley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41ECC1E8AD51400F8451F /* Stanley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		07A41EF41E8AE05D00F8451F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07A41ED31E8ADCF600F8451F /* FontAwesome.ttf */; };
+		07B96E5F1F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
+		07B96E601F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
+		07B96E611F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
+		07B96E621F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
+		07B96E651F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07B96E661F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07B96E671F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07B96E681F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		07B96E691F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
+		07B96E6A1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
+		07B96E6B1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
+		07B96E6C1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
 		07E83B501E89E62300824A77 /* KSOFontAwesomeConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B561E89EB0500824A77 /* KSOFontAwesomeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -279,7 +287,6 @@
 		07A41EC11E8AD3A900F8451F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07A41EC31E8AD3A900F8451F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07A41ECC1E8AD51400F8451F /* Stanley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Stanley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		07A41ED31E8ADCF600F8451F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		07A41ED91E8AE02300F8451F /* Demo-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Demo-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07A41EDB1E8AE02300F8451F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07A41EDC1E8AE02300F8451F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -289,6 +296,9 @@
 		07A41EE41E8AE02300F8451F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07A41EE71E8AE02300F8451F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07A41EE91E8AE02300F8451F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KSOFontAwesomeExtensionsPrivate.h"; sourceTree = "<group>"; };
+		07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KSOFontAwesomeExtensionsPrivate.m"; sourceTree = "<group>"; };
 		07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeConstants.h; sourceTree = "<group>"; };
 		07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeDefines.h; sourceTree = "<group>"; };
 		07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeFunctions.h; sourceTree = "<group>"; };
@@ -467,6 +477,7 @@
 				0723C2F81E941A130008BA3A /* KSOFontAwesomeExtensions-tvOS-Info.plist */,
 				0723C3361E9421440008BA3A /* KSOFontAwesomeExtensions-watchOS-Info.plist */,
 				073CF2FC1E89CC9B006435C2 /* KSOFontAwesomeExtensions-Info.h */,
+				07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -502,7 +513,6 @@
 				07A41EBE1E8AD3A900F8451F /* Assets.xcassets */,
 				07A41EC01E8AD3A900F8451F /* LaunchScreen.storyboard */,
 				07A41EC31E8AD3A900F8451F /* Info.plist */,
-				07A41ED31E8ADCF600F8451F /* FontAwesome.ttf */,
 				07A41EB21E8AD3A900F8451F /* Supporting Files */,
 			);
 			path = "Demo-iOS";
@@ -544,6 +554,8 @@
 			children = (
 				07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */,
 				07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */,
+				07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */,
+				07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -571,6 +583,7 @@
 			files = (
 				0723C31E1E941C9D0008BA3A /* UIFont+KSOFontAwesomeExtensions.h in Headers */,
 				0723C31D1E941C9D0008BA3A /* KSOFontAwesomeDefines.h in Headers */,
+				07B96E671F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
 				0723C3211E941C9D0008BA3A /* UIButton+KSOFontAwesomeExtensions.h in Headers */,
 				0723C31F1E941C9D0008BA3A /* NSString+KSOFontAwesomeExtensions.h in Headers */,
 				0723C3201E941C9D0008BA3A /* UIImage+KSOFontAwesomeExtensions.h in Headers */,
@@ -590,6 +603,7 @@
 				0723C33B1E9421F80008BA3A /* NSString+KSOFontAwesomeExtensions.h in Headers */,
 				0723C33C1E9421F80008BA3A /* UIImage+KSOFontAwesomeExtensions.h in Headers */,
 				0723C3371E9421F80008BA3A /* KSOFontAwesomeExtensions.h in Headers */,
+				07B96E681F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
 				0723C3381E9421F80008BA3A /* KSOFontAwesomeConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -600,6 +614,7 @@
 			files = (
 				07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */,
 				07A41E831E8AC97F00F8451F /* NSString+KSOFontAwesomeExtensions.h in Headers */,
+				07B96E651F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
 				07E83B5B1E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h in Headers */,
 				07A41E8B1E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h in Headers */,
 				07A41E871E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h in Headers */,
@@ -619,6 +634,7 @@
 				07A41EA21E8ACF1600F8451F /* NSImage+KSOFontAwesomeExtensions.h in Headers */,
 				07A41EA11E8ACF1600F8451F /* NSString+KSOFontAwesomeExtensions.h in Headers */,
 				07A41E9D1E8ACF1600F8451F /* KSOFontAwesomeExtensions.h in Headers */,
+				07B96E661F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
 				07A41E9E1E8ACF1600F8451F /* KSOFontAwesomeConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -873,6 +889,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B96E611F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -882,7 +899,6 @@
 			files = (
 				0723C30E1E941B860008BA3A /* Assets.xcassets in Resources */,
 				0723C30C1E941B860008BA3A /* Main.storyboard in Resources */,
-				0723C3281E941D9F0008BA3A /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,6 +906,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B96E621F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -899,7 +916,6 @@
 			files = (
 				0723C34A1E9422AB0008BA3A /* Assets.xcassets in Resources */,
 				0723C3481E9422AB0008BA3A /* Interface.storyboard in Resources */,
-				0723C3791E9432F80008BA3A /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,6 +931,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B96E5F1F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -922,6 +939,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07B96E601F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -930,7 +948,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A41EC21E8AD3A900F8451F /* LaunchScreen.storyboard in Resources */,
-				07A41ED41E8ADCF600F8451F /* FontAwesome.ttf in Resources */,
 				07A41EBF1E8AD3A900F8451F /* Assets.xcassets in Resources */,
 				07A41EBD1E8AD3A900F8451F /* Main.storyboard in Resources */,
 			);
@@ -942,7 +959,6 @@
 			files = (
 				07A41EE51E8AE02300F8451F /* Assets.xcassets in Resources */,
 				07A41EE81E8AE02300F8451F /* Main.storyboard in Resources */,
-				07A41EF41E8AE05D00F8451F /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,6 +972,7 @@
 				0723C3261E941CB30008BA3A /* UIButton+KSOFontAwesomeExtensions.m in Sources */,
 				0723C3271E941CB30008BA3A /* KSOFontAwesomeFunctions.m in Sources */,
 				0723C3241E941CB30008BA3A /* NSString+KSOFontAwesomeExtensions.m in Sources */,
+				07B96E6B1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				0723C3251E941CB30008BA3A /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
 				0723C3231E941CB30008BA3A /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 			);
@@ -977,6 +994,7 @@
 			files = (
 				0723C33F1E94220C0008BA3A /* NSString+KSOFontAwesomeExtensions.m in Sources */,
 				0723C3401E94220C0008BA3A /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
+				07B96E6C1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				0723C3411E94220C0008BA3A /* KSOFontAwesomeFunctions.m in Sources */,
 				0723C33E1E94220C0008BA3A /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 			);
@@ -999,6 +1017,7 @@
 				07A41E8C1E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.m in Sources */,
 				07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 				07E83B571E89EB0500824A77 /* KSOFontAwesomeFunctions.m in Sources */,
+				07B96E691F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				07A41E841E8AC97F00F8451F /* NSString+KSOFontAwesomeExtensions.m in Sources */,
 				07A41E881E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
 			);
@@ -1010,6 +1029,7 @@
 			files = (
 				07A41EA81E8ACF3200F8451F /* KSOFontAwesomeFunctions.m in Sources */,
 				07A41EA61E8ACF3200F8451F /* NSString+KSOFontAwesomeExtensions.m in Sources */,
+				07B96E6A1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				07A41EA71E8ACF3200F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
 				07A41EA51E8ACF3200F8451F /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 			);
