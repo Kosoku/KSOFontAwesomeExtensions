@@ -16,6 +16,8 @@
 #import "NSString+KSOFontAwesomeExtensions.h"
 #import "NSBundle+KSOFontAwesomeExtensionsPrivate.h"
 
+#import <Stanley/Stanley.h>
+
 #import <CoreText/CoreText.h>
 
 const struct KSOFontAwesomeIdentifier KSOFontAwesomeIdentifier = {
@@ -279,6 +281,7 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
     kFontAwesomeIconsToStrings = [iconsToStrings copy];
     kFontAwesomeIdentifiersToStrings = [identifiersToStrings copy];
     
+#if (!TARGET_OS_WATCH)
     NSURL *fontURL = [[NSBundle KSO_fontAwesomeExtensionsFrameworkBundle] URLForResource:@"FontAwesome" withExtension:@"ttf"];
     
     if (fontURL != nil) {
@@ -288,12 +291,20 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
             CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)fontData);
             CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
             
-            CTFontManagerRegisterGraphicsFont(font, NULL);
+            CFErrorRef outError;
+            if (!CTFontManagerRegisterGraphicsFont(font, &outError)) {
+                KSTLogObject(outError);
+                
+                if (outError != nil) {
+                    CFRelease(outError);
+                }
+            }
             
             CFRelease(font);
             CFRelease(dataProvider);
         }
     }
+#endif
 }
 
 + (NSString *)KSO_fontAwesomeIdentifierForIcon:(KSOFontAwesomeIcon)icon; {
