@@ -105,6 +105,7 @@
 		07B96E6B1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
 		07B96E6C1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
 		07B96E6D1F93E36D00AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
+		07B96E6F1F93E8D000AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
 		07E83B501E89E62300824A77 /* KSOFontAwesomeConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B4E1E89E62300824A77 /* KSOFontAwesomeConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B561E89EB0500824A77 /* KSOFontAwesomeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -926,6 +927,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0723C35C1E9422AB0008BA3A /* Assets.xcassets in Resources */,
+				07B96E6F1F93E8D000AE6AAA /* FontAwesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
