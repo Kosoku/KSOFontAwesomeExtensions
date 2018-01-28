@@ -122,6 +122,14 @@ typedef NS_ENUM(NSInteger, KSOFontAwesomeIcon) {
     KSOFontAwesomeIconCalendarMinusO,
     KSOFontAwesomeIconCalendarPlusO,
     KSOFontAwesomeIconCalendarTimesO,
+    KSOFontAwesomeIconCreditCard,
+    KSOFontAwesomeIconCreditCardAlt,
+    KSOFontAwesomeIconCreditCardAmex,
+    KSOFontAwesomeIconCreditCardDinersClub,
+    KSOFontAwesomeIconCreditCardDiscover,
+    KSOFontAwesomeIconCreditCardJCB,
+    KSOFontAwesomeIconCreditCardMasterCard,
+    KSOFontAwesomeIconCreditCardVisa,
     
     KSOFontAwesomeIconCog,
     KSOFontAwesomeIconFire,
@@ -241,6 +249,14 @@ extern const struct KSOFontAwesomeIdentifier {
     __unsafe_unretained NSString *iconCalendarMinusO;
     __unsafe_unretained NSString *iconCalendarPlusO;
     __unsafe_unretained NSString *iconCalendarTimesO;
+    __unsafe_unretained NSString *iconCreditCard;
+    __unsafe_unretained NSString *iconCreditCardAlt;
+    __unsafe_unretained NSString *iconCreditCardAmex;
+    __unsafe_unretained NSString *iconCreditCardDinersClub;
+    __unsafe_unretained NSString *iconCreditCardDiscover;
+    __unsafe_unretained NSString *iconCreditCardJCB;
+    __unsafe_unretained NSString *iconCreditCardMasterCard;
+    __unsafe_unretained NSString *iconCreditCardVisa;
     
     __unsafe_unretained NSString *iconCog;
     __unsafe_unretained NSString *iconFire;
@@ -358,6 +374,14 @@ extern const struct KSOFontAwesomeString {
     __unsafe_unretained NSString *iconCalendarMinusO;
     __unsafe_unretained NSString *iconCalendarPlusO;
     __unsafe_unretained NSString *iconCalendarTimesO;
+    __unsafe_unretained NSString *iconCreditCard;
+    __unsafe_unretained NSString *iconCreditCardAlt;
+    __unsafe_unretained NSString *iconCreditCardAmex;
+    __unsafe_unretained NSString *iconCreditCardDinersClub;
+    __unsafe_unretained NSString *iconCreditCardDiscover;
+    __unsafe_unretained NSString *iconCreditCardJCB;
+    __unsafe_unretained NSString *iconCreditCardMasterCard;
+    __unsafe_unretained NSString *iconCreditCardVisa;
     
     __unsafe_unretained NSString *iconCog;
     __unsafe_unretained NSString *iconFire;

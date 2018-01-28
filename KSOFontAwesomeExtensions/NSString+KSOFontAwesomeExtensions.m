@@ -122,6 +122,14 @@ const struct KSOFontAwesomeIdentifier KSOFontAwesomeIdentifier = {
     .iconCalendarMinusO = @"fa-calendar-minus-o",
     .iconCalendarPlusO = @"fa-calendar-plus-o",
     .iconCalendarTimesO = @"fa-calendar-times-o",
+    .iconCreditCard = @"fa-credit-card",
+    .iconCreditCardAlt = @"fa-credit-card-alt",
+    .iconCreditCardAmex = @"fa-cc-amex",
+    .iconCreditCardDinersClub = @"fa-cc-diners-club",
+    .iconCreditCardDiscover = @"fa-cc-discover",
+    .iconCreditCardJCB = @"fa-cc-jcb",
+    .iconCreditCardMasterCard = @"fa-cc-mastercard",
+    .iconCreditCardVisa = @"fa-cc-visa",
     
     .iconCog = @"fa-cog",
     .iconFire = @"fa-fire",
@@ -236,6 +244,14 @@ const struct KSOFontAwesomeString KSOFontAwesomeString = {
     .iconCalendarMinusO = @"\uf272",
     .iconCalendarPlusO = @"\uf271",
     .iconCalendarTimesO = @"\uf273",
+    .iconCreditCard = @"\uf09d",
+    .iconCreditCardAlt = @"\uf283",
+    .iconCreditCardAmex = @"\uf1f3",
+    .iconCreditCardDinersClub = @"\uf24c",
+    .iconCreditCardDiscover = @"\uf1f2",
+    .iconCreditCardJCB = @"\uf24b",
+    .iconCreditCardMasterCard = @"\uf1f1",
+    .iconCreditCardVisa = @"\uf1f0",
     
     .iconCog = @"\uf013",
     .iconFire = @"\uf06d",
@@ -529,6 +545,22 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
             return KSOFontAwesomeIdentifier.iconCalendarMinusO;
         case KSOFontAwesomeIconCalendarTimesO:
             return KSOFontAwesomeIdentifier.iconCalendarTimesO;
+        case KSOFontAwesomeIconCreditCard:
+            return KSOFontAwesomeIdentifier.iconCreditCard;
+        case KSOFontAwesomeIconCreditCardAlt:
+            return KSOFontAwesomeIdentifier.iconCreditCardAlt;
+        case KSOFontAwesomeIconCreditCardAmex:
+            return KSOFontAwesomeIdentifier.iconCreditCardAmex;
+        case KSOFontAwesomeIconCreditCardDinersClub:
+            return KSOFontAwesomeIdentifier.iconCreditCardDinersClub;
+        case KSOFontAwesomeIconCreditCardDiscover:
+            return KSOFontAwesomeIdentifier.iconCreditCardDiscover;
+        case KSOFontAwesomeIconCreditCardJCB:
+            return KSOFontAwesomeIdentifier.iconCreditCardJCB;
+        case KSOFontAwesomeIconCreditCardMasterCard:
+            return KSOFontAwesomeIdentifier.iconCreditCardMasterCard;
+        case KSOFontAwesomeIconCreditCardVisa:
+            return KSOFontAwesomeIdentifier.iconCreditCardVisa;
             
         case KSOFontAwesomeIconCog:
             return KSOFontAwesomeIdentifier.iconCog;
@@ -755,6 +787,22 @@ static NSDictionary *kFontAwesomeIdentifiersToStrings;
             return KSOFontAwesomeString.iconCalendarMinusO;
         case KSOFontAwesomeIconCalendarTimesO:
             return KSOFontAwesomeString.iconCalendarTimesO;
+        case KSOFontAwesomeIconCreditCard:
+            return KSOFontAwesomeString.iconCreditCard;
+        case KSOFontAwesomeIconCreditCardAlt:
+            return KSOFontAwesomeString.iconCreditCardAlt;
+        case KSOFontAwesomeIconCreditCardAmex:
+            return KSOFontAwesomeString.iconCreditCardAmex;
+        case KSOFontAwesomeIconCreditCardDinersClub:
+            return KSOFontAwesomeString.iconCreditCardDinersClub;
+        case KSOFontAwesomeIconCreditCardDiscover:
+            return KSOFontAwesomeString.iconCreditCardDiscover;
+        case KSOFontAwesomeIconCreditCardJCB:
+            return KSOFontAwesomeString.iconCreditCardJCB;
+        case KSOFontAwesomeIconCreditCardMasterCard:
+            return KSOFontAwesomeString.iconCreditCardMasterCard;
+        case KSOFontAwesomeIconCreditCardVisa:
+            return KSOFontAwesomeString.iconCreditCardVisa;
             
         case KSOFontAwesomeIconCog:
             return KSOFontAwesomeString.iconCog;
