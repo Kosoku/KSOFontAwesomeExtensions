@@ -15,10 +15,8 @@
 
 #import <Foundation/Foundation.h>
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-
 @interface TableRowController : NSObject
 
-@property (assign,nonatomic) KSOFontAwesomeIcon icon;
+@property (copy,nonatomic) NSString *string;
 
 @end

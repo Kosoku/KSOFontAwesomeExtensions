@@ -50,7 +50,7 @@ static CGSize const kItemSize = {.width=64, .height=64};
 @end
 
 @interface CollectionViewCell : UICollectionViewCell
-@property (assign,nonatomic) KSOFontAwesomeIcon icon;
+@property (copy,nonatomic) NSString *string;
 @property (strong,nonatomic) UIImageView *imageView;
 @end
 
@@ -72,10 +72,10 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [self.imageView setFrame:self.contentView.bounds];
 }
 
-- (void)setIcon:(KSOFontAwesomeIcon)icon {
-    _icon = icon;
+- (void)setString:(NSString *)string {
+    _string = string;
     
-    [self.imageView setImage:[UIImage KSO_fontAwesomeImageWithIcon:self.icon size:kItemSize]];
+    self.imageView.image = [UIImage KSO_fontAwesomeImageWithString:_string size:kItemSize];
 }
 
 @end
@@ -84,12 +84,16 @@ static CGSize const kItemSize = {.width=64, .height=64};
 @property (strong,nonatomic) UICollectionView *collectionView;
 
 @property (strong,nonatomic) PreviewItem *previewItem;
+
+@property (copy,nonatomic) NSArray<NSString *> *strings;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.strings = @[@"\uf2b9",@"\uf042"];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -111,24 +115,24 @@ static CGSize const kItemSize = {.width=64, .height=64};
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return KSO_FONT_AWESOME_ICON_TOTAL_ICONS;
+    return 1;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class]) forIndexPath:indexPath];
     
-    [cell setIcon:(KSOFontAwesomeIcon)indexPath.row];
+    cell.string = self.strings[indexPath.item];
     
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIImage *image = [UIImage KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)indexPath.row foregroundColor:self.collectionView.tintColor size:[UIScreen mainScreen].bounds.size];
+    UIImage *image = [UIImage KSO_fontAwesomeImageWithString:self.strings[indexPath.item] foregroundColor:self.collectionView.tintColor size:[UIScreen mainScreen].bounds.size];
     NSData *data = UIImagePNGRepresentation(image);
     NSURL *previewURL = [NSURL fileURLWithPath:[[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]] stringByAppendingPathExtension:@"png"]];
     
     [data writeToURL:previewURL options:NSDataWritingAtomic error:NULL];
     
-    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:[NSString KSO_fontAwesomeIdentifierForIcon:(KSOFontAwesomeIcon)indexPath.row]]];
+    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:self.strings[indexPath.item]]];
     
     QLPreviewController *previewController = [[QLPreviewController alloc] init];
     

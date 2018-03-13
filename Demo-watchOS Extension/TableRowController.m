@@ -25,10 +25,10 @@
 
 @implementation TableRowController
 
-- (void)setIcon:(KSOFontAwesomeIcon)icon {
-    _icon = icon;
+- (void)setString:(NSString *)string {
+    _string = string;
     
-    [self.interfaceImage setImage:[UIImage KSO_fontAwesomeImageWithIcon:_icon size:CGSizeMake(32, 32)]];
+    [self.interfaceImage setImage:[UIImage KSO_fontAwesomeImageWithString:_string size:CGSizeMake(32, 32)]];
 }
 
 @end

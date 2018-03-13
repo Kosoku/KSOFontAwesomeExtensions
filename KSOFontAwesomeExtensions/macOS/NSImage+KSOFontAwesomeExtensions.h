@@ -22,34 +22,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSImage (KSOFontAwesomeExtensions)
 
 /**
- Calls `KSO_fontAwesomeImageWithIcon:foregroundColor:backgroundColor:size:`, passing icon, nil, nil, and size.
- 
- @param icon The Font Awesome icon
- @param size The desired size of the image
- @return The Font Awesome image
- */
-+ (NSImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon size:(NSSize)size;
-/**
- Calls `KSO_fontAwesomeImageWithIcon:foregroundColor:backgroundColor:size:`, passing icon, foregroundColor, nil, and size.
- 
- @param icon The Font Awesome icon
- @param foregroundColor The foreground color of the image, default is [NSColor colorForControlTint:[NSColor currentControlTint]]
- @param size The desired size of the image
- @return The Font Awesome image
- */
-+ (NSImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(nullable NSColor *)foregroundColor size:(NSSize)size;
-/**
- Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
- 
- @param icon The Font Awesome icon
- @param foregroundColor The foreground color of the image, default is [NSColor colorForControlTint:[NSColor currentControlTint]]
- @param backgroundColor The background color of the image
- @param size The desired size of the image
- @return The Font Awesome image
- */
-+ (NSImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(nullable NSColor *)foregroundColor backgroundColor:(nullable NSColor *)backgroundColor size:(NSSize)size;
-
-/**
  Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
  
  The string should be in Unicode escaped form (e.g. @"\uf26e").

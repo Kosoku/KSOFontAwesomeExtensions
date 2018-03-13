@@ -16,10 +16,10 @@
 #import "InterfaceController.h"
 #import "TableRowController.h"
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-
 @interface InterfaceController ()
 @property (weak,nonatomic) IBOutlet WKInterfaceTable *interfaceTable;
+
+@property (copy,nonatomic) NSArray<NSString *> *strings;
 @end
 
 
@@ -28,12 +28,14 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
-    [self.interfaceTable setNumberOfRows:KSO_FONT_AWESOME_ICON_TOTAL_ICONS withRowType:NSStringFromClass(TableRowController.class)];
+    self.strings = @[@"\uf2b9",@"\uf042"];
+    
+    [self.interfaceTable setNumberOfRows:self.strings.count withRowType:NSStringFromClass(TableRowController.class)];
     
     for (NSInteger i=0; i<self.interfaceTable.numberOfRows; i++) {
         TableRowController *rowController = [self.interfaceTable rowControllerAtIndex:i];
         
-        [rowController setIcon:i];
+        [rowController setString:self.strings[i]];
     }
 }
 

@@ -15,39 +15,9 @@
 
 #import <UIKit/UIKit.h>
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (KSOFontAwesomeExtensions)
-
-/**
- Calls `KSO_fontAwesomeImageWithIcon:foregroundColor:backgroundColor:size:`, passing icon, nil, nil, and size.
- 
- @param icon The Font Awesome icon
- @param size The desired size of the image
- @return The Font Awesome image
- */
-+ (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon size:(CGSize)size;
-/**
- Calls `KSO_fontAwesomeImageWithIcon:foregroundColor:backgroundColor:size:`, passing icon, foregroundColor, nil, and size.
- 
- @param icon The Font Awesome icon
- @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
- @param size The desired size of the image
- @return The Font Awesome image
- */
-+ (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
-/**
- Draws the Font Awesome string for the provided icon into a graphics context of the provided size using the provided foreground and background colors.
- 
- @param icon The Font Awesome icon
- @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
- @param backgroundColor The background color of the image
- @param size The desired size of the image
- @return The Font Awesome image
- */
-+ (UIImage *)KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)icon foregroundColor:(nullable UIColor *)foregroundColor backgroundColor:(nullable UIColor *)backgroundColor size:(CGSize)size;
 
 /**
  Calls `[self KSO_fontAwesomeImageWithString:string foregroundColor:nil backgroundColor:nil size:size]`.
