@@ -14,13 +14,13 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "ViewController.h"
+#import "StringSection.h"
 
 #import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 
 static CGSize const kItemSize = {.width=128, .height=128};
 
 @interface CollectionViewCell : UICollectionViewCell
-@property (assign,nonatomic) KSOFontAwesomeIcon icon;
 @property (strong,nonatomic) UIImageView *imageView;
 @end
 
@@ -43,23 +43,20 @@ static CGSize const kItemSize = {.width=128, .height=128};
     [self.imageView setFrame:self.contentView.bounds];
 }
 
-- (void)setIcon:(KSOFontAwesomeIcon)icon {
-    _icon = icon;
-    
-    [self.imageView setImage:[UIImage KSO_fontAwesomeImageWithIcon:self.icon size:kItemSize]];
-}
-
 @end
 
 @interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
 @property (strong,nonatomic) UICollectionView *collectionView;
 
+@property (copy,nonatomic) NSArray<StringSection *> *sections;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.sections = [StringSection stringSectionsFromJSON];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -80,13 +77,16 @@ static CGSize const kItemSize = {.width=128, .height=128};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view][bottom]" options:0 metrics:nil views:@{@"view": self.collectionView, @"top": self.topLayoutGuide, @"bottom": self.bottomLayoutGuide}]];
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.sections.count;
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return KSO_FONT_AWESOME_ICON_TOTAL_ICONS;
+    return self.sections[section].strings.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class]) forIndexPath:indexPath];
     
-    [cell setIcon:(KSOFontAwesomeIcon)indexPath.row];
+    cell.imageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.row] size:kItemSize];
     
     return cell;
 }

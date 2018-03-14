@@ -15,8 +15,6 @@
 
 #import <AppKit/AppKit.h>
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeConstants.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 /**

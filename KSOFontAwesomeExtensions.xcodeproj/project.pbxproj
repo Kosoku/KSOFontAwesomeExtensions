@@ -64,6 +64,15 @@
 		0797189D20589E9700841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
 		0797189E20589E9800841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
 		0797189F20589E9900841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
+		079718AB2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
+		079718AC2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
+		079718AD2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
+		079718AE2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
+		079718AF2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
+		079718B22059B4AE00841EE8 /* StringSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 079718B12059B4AE00841EE8 /* StringSection.m */; };
+		079718B32059B4AE00841EE8 /* StringSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 079718B12059B4AE00841EE8 /* StringSection.m */; };
+		079718B42059B4AE00841EE8 /* StringSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 079718B12059B4AE00841EE8 /* StringSection.m */; };
+		079718B52059B4AE00841EE8 /* StringSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 079718B12059B4AE00841EE8 /* StringSection.m */; };
 		07A41E871E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A41E851E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A41E881E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41E861E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m */; };
 		07A41E8B1E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A41E891E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -268,6 +277,9 @@
 		079718822058969700841EE8 /* fa-brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-brands.ttf"; sourceTree = "<group>"; };
 		07971884205896B800841EE8 /* fa-solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid.ttf"; sourceTree = "<group>"; };
 		0797189A20589E7600841EE8 /* fa-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular.ttf"; sourceTree = "<group>"; };
+		079718AA2059B3B900841EE8 /* strings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings.json; sourceTree = "<group>"; };
+		079718B02059B4AE00841EE8 /* StringSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringSection.h; sourceTree = "<group>"; };
+		079718B12059B4AE00841EE8 /* StringSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringSection.m; sourceTree = "<group>"; };
 		07A41E851E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+KSOFontAwesomeExtensions.h"; path = "iOS/UIImage+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
 		07A41E861E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage-NSImage+KSOFontAwesomeExtensions.m"; path = "iOS/UIImage-NSImage+KSOFontAwesomeExtensions.m"; sourceTree = "<group>"; };
 		07A41E891E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+KSOFontAwesomeExtensions.h"; path = "iOS/UIButton+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
@@ -506,10 +518,13 @@
 				07A41EB61E8AD3A900F8451F /* AppDelegate.m */,
 				07A41EB81E8AD3A900F8451F /* ViewController.h */,
 				07A41EB91E8AD3A900F8451F /* ViewController.m */,
+				079718B02059B4AE00841EE8 /* StringSection.h */,
+				079718B12059B4AE00841EE8 /* StringSection.m */,
 				07A41EBB1E8AD3A900F8451F /* Main.storyboard */,
 				07A41EBE1E8AD3A900F8451F /* Assets.xcassets */,
 				07A41EC01E8AD3A900F8451F /* LaunchScreen.storyboard */,
 				07A41EC31E8AD3A900F8451F /* Info.plist */,
+				079718AA2059B3B900841EE8 /* strings.json */,
 				07A41EB21E8AD3A900F8451F /* Supporting Files */,
 			);
 			path = "Demo-iOS";
@@ -894,6 +909,7 @@
 			files = (
 				0723C30E1E941B860008BA3A /* Assets.xcassets in Resources */,
 				0723C30C1E941B860008BA3A /* Main.storyboard in Resources */,
+				079718AD2059B3B900841EE8 /* strings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -910,6 +926,7 @@
 			files = (
 				0723C34A1E9422AB0008BA3A /* Assets.xcassets in Resources */,
 				0723C3481E9422AB0008BA3A /* Interface.storyboard in Resources */,
+				079718AE2059B3B900841EE8 /* strings.json in Resources */,
 				0797189E20589E9800841EE8 /* fa-regular.ttf in Resources */,
 				079718942058971200841EE8 /* fa-solid.ttf in Resources */,
 				079718922058971200841EE8 /* fa-brands.ttf in Resources */,
@@ -924,6 +941,7 @@
 				0723C35C1E9422AB0008BA3A /* Assets.xcassets in Resources */,
 				079718972058971200841EE8 /* fa-solid.ttf in Resources */,
 				079718952058971200841EE8 /* fa-brands.ttf in Resources */,
+				079718AF2059B3B900841EE8 /* strings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -953,6 +971,7 @@
 			files = (
 				07A41EC21E8AD3A900F8451F /* LaunchScreen.storyboard in Resources */,
 				07A41EBF1E8AD3A900F8451F /* Assets.xcassets in Resources */,
+				079718AB2059B3B900841EE8 /* strings.json in Resources */,
 				07A41EBD1E8AD3A900F8451F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -963,6 +982,7 @@
 			files = (
 				07A41EE51E8AE02300F8451F /* Assets.xcassets in Resources */,
 				07A41EE81E8AE02300F8451F /* Main.storyboard in Resources */,
+				079718AC2059B3B900841EE8 /* strings.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1046,6 +1066,7 @@
 			files = (
 				0723C3091E941B860008BA3A /* ViewController.m in Sources */,
 				0723C3061E941B860008BA3A /* AppDelegate.m in Sources */,
+				079718B42059B4AE00841EE8 /* StringSection.m in Sources */,
 				0723C3031E941B860008BA3A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1067,6 +1088,7 @@
 			files = (
 				0723C35A1E9422AB0008BA3A /* ExtensionDelegate.m in Sources */,
 				0723C3571E9422AB0008BA3A /* InterfaceController.m in Sources */,
+				079718B52059B4AE00841EE8 /* StringSection.m in Sources */,
 				0723C3761E9423BF0008BA3A /* TableRowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1100,6 +1122,7 @@
 			files = (
 				07A41EBA1E8AD3A900F8451F /* ViewController.m in Sources */,
 				07A41EB71E8AD3A900F8451F /* AppDelegate.m in Sources */,
+				079718B22059B4AE00841EE8 /* StringSection.m in Sources */,
 				07A41EB41E8AD3A900F8451F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1110,6 +1133,7 @@
 			files = (
 				07A41EE31E8AE02300F8451F /* ViewController.m in Sources */,
 				07A41EE01E8AE02300F8451F /* main.m in Sources */,
+				079718B32059B4AE00841EE8 /* StringSection.m in Sources */,
 				07A41EDD1E8AE02300F8451F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

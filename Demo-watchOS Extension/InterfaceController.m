@@ -15,11 +15,12 @@
 
 #import "InterfaceController.h"
 #import "TableRowController.h"
+#import "StringSection.h"
 
 @interface InterfaceController ()
 @property (weak,nonatomic) IBOutlet WKInterfaceTable *interfaceTable;
 
-@property (copy,nonatomic) NSArray<NSString *> *strings;
+@property (copy,nonatomic) NSArray<StringSection *> *sections;
 @end
 
 
@@ -28,14 +29,14 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
-    self.strings = @[@"\uf2b9",@"\uf042"];
+    self.sections = [StringSection stringSectionsFromJSON];
     
-    [self.interfaceTable setNumberOfRows:self.strings.count withRowType:NSStringFromClass(TableRowController.class)];
+    [self.interfaceTable setNumberOfRows:self.sections.firstObject.strings.count withRowType:NSStringFromClass(TableRowController.class)];
     
     for (NSInteger i=0; i<self.interfaceTable.numberOfRows; i++) {
         TableRowController *rowController = [self.interfaceTable rowControllerAtIndex:i];
         
-        [rowController setString:self.strings[i]];
+        rowController.image = [StringSection imageForTitle:self.sections.firstObject.title string:self.sections.firstObject.strings[i] size:CGSizeMake(32, 32)];
     }
 }
 

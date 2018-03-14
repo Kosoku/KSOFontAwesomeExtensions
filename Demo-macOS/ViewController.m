@@ -14,6 +14,7 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "ViewController.h"
+#import "StringSection.h"
 
 #import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
 
@@ -50,7 +51,6 @@ static NSSize const kItemSize = {.width=64, .height=64};
 @end
 
 @interface CollectionViewItem : NSCollectionViewItem
-@property (assign,nonatomic) KSOFontAwesomeIcon icon;
 @property (strong,nonatomic) NSImageView *iconImageView;
 @end
 
@@ -70,18 +70,14 @@ static NSSize const kItemSize = {.width=64, .height=64};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]|" options:0 metrics:nil views:@{@"view": self.iconImageView}]];
 }
 
-- (void)setIcon:(KSOFontAwesomeIcon)icon {
-    _icon = icon;
-    
-    [self.iconImageView setImage:[NSImage KSO_fontAwesomeImageWithIcon:self.icon foregroundColor:[NSColor keyboardFocusIndicatorColor] size:kItemSize]];
-}
-
 @end
 
 @interface ViewController () <NSCollectionViewDataSource,NSCollectionViewDelegate,QLPreviewPanelDataSource>
 @property (weak,nonatomic) IBOutlet NSCollectionView *collectionView;
 
 @property (strong,nonatomic) PreviewItem *previewItem;
+
+@property (copy,nonatomic) NSArray<StringSection *> *sections;
 @end
 
 @implementation ViewController
@@ -89,6 +85,8 @@ static NSSize const kItemSize = {.width=64, .height=64};
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.sections = [StringSection stringSectionsFromJSON];
+    
     NSCollectionViewFlowLayout *layout = [[NSCollectionViewFlowLayout alloc] init];
     
     [layout setSectionInset:NSEdgeInsetsMake(8, 8, 0, 8)];
@@ -102,25 +100,29 @@ static NSSize const kItemSize = {.width=64, .height=64};
     [self.collectionView setDelegate:self];
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(NSCollectionView *)collectionView {
+    return self.sections.count;
+}
 - (NSInteger)collectionView:(NSCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return KSO_FONT_AWESOME_ICON_TOTAL_ICONS;
+    return self.sections[section].strings.count;
 }
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewItem *item = [collectionView makeItemWithIdentifier:NSStringFromClass([CollectionViewItem class]) forIndexPath:indexPath];
     
-    [item setIcon:(KSOFontAwesomeIcon)[indexPath indexAtPosition:1]];
+    item.iconImageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.item] size:kItemSize];
     
     return item;
 }
 
 - (void)collectionView:(NSCollectionView *)collectionView didSelectItemsAtIndexPaths:(NSSet<NSIndexPath *> *)indexPaths {
-    NSImage *image = [NSImage KSO_fontAwesomeImageWithIcon:(KSOFontAwesomeIcon)[indexPaths.anyObject indexAtPosition:1] foregroundColor:[NSColor keyboardFocusIndicatorColor] size:self.view.window.frame.size];
+    NSIndexPath *indexPath = indexPaths.anyObject;
+    NSImage *image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.item] size:self.view.window.frame.size];
     NSData *data = [image TIFFRepresentation];
     NSURL *previewURL = [NSURL fileURLWithPath:[[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]] stringByAppendingPathExtension:@"tiff"]];
     
     [data writeToURL:previewURL options:NSDataWritingAtomic error:NULL];
     
-    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:[NSString KSO_fontAwesomeIdentifierForIcon:(KSOFontAwesomeIcon)[indexPaths.anyObject indexAtPosition:1]]]];
+    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:self.sections[indexPath.section].title]];
     
     [[QLPreviewPanel sharedPreviewPanel] makeKeyAndOrderFront:nil];
 }

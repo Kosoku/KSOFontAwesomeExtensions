@@ -15,8 +15,6 @@
 
 #import "TableRowController.h"
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
-
 #import <WatchKit/WatchKit.h>
 
 @interface TableRowController ()
@@ -25,10 +23,8 @@
 
 @implementation TableRowController
 
-- (void)setString:(NSString *)string {
-    _string = string;
-    
-    [self.interfaceImage setImage:[UIImage KSO_fontAwesomeRegularImageWithString:_string size:CGSizeMake(32, 32)]];
+- (void)setImage:(UIImage *)image {
+    [self.interfaceImage setImage:image];
 }
 
 @end
