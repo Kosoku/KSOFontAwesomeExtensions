@@ -23,6 +23,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>fa-regular.ttf</string>
+		<string>fa-solid.ttf</string>
+		<string>fa-brands.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

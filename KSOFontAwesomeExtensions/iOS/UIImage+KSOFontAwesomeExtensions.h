@@ -17,46 +17,57 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ Methods to create images from Font Awesome strings using the respective named font (e.g. regular, solid, or brands). Some strings exist in multiple fonts, ensure you specify the version you want.
+ */
 @interface UIImage (KSOFontAwesomeExtensions)
 
 /**
- Calls `[self KSO_fontAwesomeImageWithString:string foregroundColor:nil backgroundColor:nil size:size]`.
- 
- The string should be in Unicode escaped form (e.g. @"\uf26e").
- 
- @param string The Font Awesome string
- @param size The desired size of the image
- @return The Font Awesome image
+ Returns [self KSO_fontAwesomeRegularImageWithString:foregroundColor:size], passing *string*, nil, and *size*.
  */
-+ (UIImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string size:(CGSize)size;
++ (nullable UIImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string size:(CGSize)size;
 /**
- Calls `[self KSO_fontAwesomeImageWithString:string foregroundColor:foregroundColor backgroundColor:nil size:size]`.
- 
- The string should be in Unicode escaped form (e.g. @"\uf26e").
- 
- @param string The Font Awesome string
- @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
- @param size The desired size of the image
- @return The Font Awesome image
+ Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, [UIFont KSO_fontAwesomeFontNameRegular], *foregroundColor*, nil, and *size*.
  */
-+ (UIImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
++ (nullable UIImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
+
 /**
- Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
- 
- The string should be in Unicode escaped form (e.g. @"\uf26e").
- 
- @param string The Font Awesome string
- @param foregroundColor The foreground color of the image, default is UIApplication.sharedApplication.keyWindow.tintColor
- @param backgroundColor The background color of the image
- @param size The desired size of the image
- @return The Font Awesome image
+ Returns [self KSO_fontAwesomeBrandImageWithString:foregroundColor:size:], passing *string*, nil, and *size*.
  */
-+ (UIImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor backgroundColor:(nullable UIColor *)backgroundColor size:(CGSize)size;
++ (nullable UIImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string size:(CGSize)size;
+/**
+ Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, [UIFont KSO_fontAwesomeFontNameBrand], *foregroundColor*, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
 
-+ (UIImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string size:(CGSize)size;
-+ (UIImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string size:(CGSize)size;
+/**
+ Returns [self KSO_fontAwesomeSolidImageWithString:foregroundColor:size:], passing *string*, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string size:(CGSize)size;
+/**
+ Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, [UIFont KSO_fontAwesomeFontNameSolid], *foregroundColor*, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
 
-+ (UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(nullable UIColor *)foregroundColor backgroundColor:(nullable UIColor *)backgroundColor size:(CGSize)size;
+/**
+ Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, *fontName*, nil, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName size:(CGSize)size;
+/**
+ Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, *fontName*, *foregroundColor*, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
+/**
+ Returns an image created by drawing the specified string, which must be in Unicode escaped format (e.g. @"\uf2ab"), into an image with the specified foreground and background colors at the specified size. When passing the *fontName* param, you should use one of the class methods KSO_fontAwesomeFontNameRegular, KSO_fontAwesomeFontNameBrand, or KSO_fontAwesomeFontNameSolid.
+ 
+ @param string The escaped Unicode to draw into an image
+ @param fontName The Font Awesome font to use when drawing the string
+ @param foregroundColor The foreground color to apply to the image
+ @param backgroundColor The background color to use
+ @param size The size to draw the image
+ @return The image or nil
+ */
++ (nullable UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(nullable UIColor *)foregroundColor backgroundColor:(nullable UIColor *)backgroundColor size:(CGSize)size;
 
 @end
 

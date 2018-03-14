@@ -27,24 +27,33 @@
 @implementation KSOImage (KSOFontAwesomeExtensions)
 
 + (KSOImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string size:(KSOSize)size {
-    return [self KSO_fontAwesomeRegularImageWithString:string foregroundColor:nil backgroundColor:nil size:size];
+    return [self KSO_fontAwesomeRegularImageWithString:string foregroundColor:nil size:size];
 }
 + (KSOImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size {
-    return [self KSO_fontAwesomeRegularImageWithString:string foregroundColor:foregroundColor backgroundColor:nil size:size];
-}
-+ (KSOImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor backgroundColor:(KSOColor *)backgroundColor size:(KSOSize)size {
-    return [self KSO_fontAwesomeImageWithString:string fontName:KSOFontAwesomeFontNameRegular foregroundColor:foregroundColor backgroundColor:backgroundColor size:size];
+    return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameRegular] foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
 
 + (KSOImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string size:(CGSize)size; {
-    return [self KSO_fontAwesomeImageWithString:string fontName:KSOFontAwesomeFontNameBrand foregroundColor:nil backgroundColor:nil size:size];
+    return [self KSO_fontAwesomeBrandImageWithString:string foregroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size; {
+    return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameBrand] foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
 
 + (KSOImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string size:(CGSize)size; {
-    return [self KSO_fontAwesomeImageWithString:string fontName:KSOFontAwesomeFontNameSolid foregroundColor:nil backgroundColor:nil size:size];
+    return [self KSO_fontAwesomeSolidImageWithString:string foregroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size; {
+    return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameSolid] foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
 
-+ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(UIColor *)foregroundColor backgroundColor:(UIColor *)backgroundColor size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName size:(KSOSize)size; {
+    return [self KSO_fontAwesomeImageWithString:string fontName:fontName foregroundColor:nil backgroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(nullable KSOColor *)foregroundColor size:(KSOSize)size; {
+    return [self KSO_fontAwesomeImageWithString:string fontName:fontName foregroundColor:foregroundColor backgroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(KSOColor *)foregroundColor backgroundColor:(KSOColor *)backgroundColor size:(KSOSize)size; {
 #if (TARGET_OS_IPHONE)
     UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
@@ -67,7 +76,7 @@
 #endif
     }
     
-    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontWithName:fontName size:pointSize], NSForegroundColorAttributeName: foregroundColor}];
+    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [UIFont KSO_fontAwesomeFontWithName:fontName size:pointSize], NSForegroundColorAttributeName: foregroundColor}];
     
     UIImage *retval = [UIGraphicsGetImageFromCurrentImageContext() imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -86,13 +95,13 @@
     
     NSString *text = string;
     NSRect rect;
-    CGFloat pointSize = KSOFontAwesomePointSizeAndRectForIconAndSize(text, size, &rect);
+    CGFloat pointSize = KSOFontAwesomePointSizeAndRectForFontTextAndSize(fontName, text, size, &rect);
     
     if (foregroundColor == nil) {
         foregroundColor = [NSColor colorForControlTint:[NSColor currentControlTint]];
     }
     
-    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [KSOFont KSO_fontAwesomeFontOfSize:pointSize], NSForegroundColorAttributeName: foregroundColor}];
+    [text drawInRect:rect withAttributes:@{NSFontAttributeName: [NSFont KSO_fontAwesomeFontWithName:fontName size:pointSize], NSForegroundColorAttributeName: foregroundColor}];
     
     [retval unlockFocus];
     

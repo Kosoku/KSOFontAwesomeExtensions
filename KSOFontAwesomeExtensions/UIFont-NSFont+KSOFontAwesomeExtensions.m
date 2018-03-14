@@ -34,6 +34,7 @@ NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5BrandsRegular";
 @implementation KSOFont (KSOFontAwesomeExtensions)
 
 + (void)load {
+#if (!TARGET_OS_WATCH)
     void(^block)(NSURL *) = ^(NSURL *fontURL){
         NSData *fontData = [NSData dataWithContentsOfURL:fontURL];
         
@@ -60,6 +61,7 @@ NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5BrandsRegular";
     for (NSURL *fontURL in [NSBundle.KSO_fontAwesomeExtensionsFrameworkBundle URLsForResourcesWithExtension:@"ttf" subdirectory:nil]) {
         block(fontURL);
     }
+#endif
 }
 
 static void const *kFontAwesomeFontNameKeyRegular = &kFontAwesomeFontNameKeyRegular;

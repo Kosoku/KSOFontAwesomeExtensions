@@ -18,31 +18,62 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- The default name for the Font Awesome font, which is "FontAwesome5FreeRegular". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using setKSO_fontAwesomeFontName:.
+ The default Postscript name for the Font Awesome regular font, which is @"FontAwesome5FreeRegular".
  */
 FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameRegular;
+/**
+ The default Postscript name for the Font Awesome solid font, which is @"FontAwesome5FreeSolid".
+ */
 FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameSolid;
+/**
+ The default Postscript name for the Font Awesome brands font, which is @"FontAwesome5BrandsRegular".
+ */
 FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameBrand;
 
 @interface NSFont (KSOFontAwesomeExtensions)
 
 /**
- Set and get the Font Awesome font name. Use this to set a name other than "FontAwesome5FreeRegular" if necessary.
+ Set and get the Font Awesome regular font name. Use this to set a name other than @"FontAwesome5FreeRegular" if necessary.
  */
 @property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameRegular;
+/**
+ Set and get the Font Awesome solid font name. Use this to set a name other than @"FontAwesome5FreeSolid" if necessary.
+ */
 @property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameSolid;
+/**
+ Set and get the Font Awesome brands font name. Use this to set a name other than @"FontAwesome5BrandsRegular" if necessary.
+ */
 @property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameBrand;
 
 /**
- Returns the Font Awesome font at the provided size.
+ Returns the Font Awesome regular font at the provided size.
  
+ @param size The font size
+ @return The Font Awesome regular font
+ */
++ (nullable NSFont *)KSO_fontAwesomeRegularFontOfSize:(CGFloat)size;
+/**
+ Returns the Font Awesome solid font at the provided size.
+ 
+ @param size The font size
+ @return The Font Awesome solid font
+ */
++ (nullable NSFont *)KSO_fontAwesomeSolidFontOfSize:(CGFloat)size;
+/**
+ Returns the Font Awesome brands font at the provided size.
+ 
+ @param size The font size
+ @return The Font Awesome brands font
+ */
++ (nullable NSFont *)KSO_fontAwesomeBrandFontOfSize:(CGFloat)size;
+/**
+ Returns the Font Awesome font with the provided name at the provided size.
+ 
+ @param name The Font Awesome font name
  @param size The font size
  @return The Font Awesome font
  */
-+ (NSFont *)KSO_fontAwesomeRegularFontOfSize:(CGFloat)size;
-+ (NSFont *)KSO_fontAwesomeSolidFontOfSize:(CGFloat)size;
-+ (NSFont *)KSO_fontAwesomeBrandFontOfSize:(CGFloat)size;
-+ (NSFont *)KSO_fontAwesomeFontWithName:(NSString *)name size:(CGFloat)size;
++ (nullable NSFont *)KSO_fontAwesomeFontWithName:(NSString *)name size:(CGFloat)size;
 
 @end
 

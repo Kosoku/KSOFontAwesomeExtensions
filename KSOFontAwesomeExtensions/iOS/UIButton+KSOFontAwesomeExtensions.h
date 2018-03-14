@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign,nonatomic) CGSize KSO_fontAwesomeSize;
 
 /**
- Calls through to KSO_setFontAwesomeIdentifier:forState:, passing KSO_fontAwesomeIdentifier and UIControlStateNormal.
+ Calls through to KSO_setFontAwesomeString:forState:, passing KSO_fontAwesomeString and UIControlStateNormal.
  */
 @property (copy,nonatomic,nullable) NSString *KSO_fontAwesomeString;
 /**
@@ -36,9 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable NSString *)KSO_fontAwesomeStringForState:(UIControlState)state;
 /**
- Sets the Font Awesome identifier for the provided control state. Passing nil, clears the Font Awesome identifier for that control state.
+ Sets the Font Awesome identifier for the provided control state. Passing nil, clears the Font Awesome string for that control state.
  
- @param fontAwesomeIdentifier The Font Awesome identifier
+ @param fontAwesomeString The Font Awesome identifier
  @param state The control state
  */
 - (void)KSO_setFontAwesomeString:(nullable NSString *)fontAwesomeString forState:(UIControlState)state;
