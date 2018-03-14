@@ -52,16 +52,16 @@ static const void *kFontAwesomeSizeKey = &kFontAwesomeSizeKey;
 - (NSString *)KSO_fontAwesomeStringForState:(UIControlState)state; {
     return self.KSO_controlStatesToFontAwesomeStrings[@(state)];
 }
-- (void)KSO_setFontAwesomeString:(NSString *)fontAwesomeIdentifier forState:(UIControlState)state; {
-    if (fontAwesomeIdentifier == nil) {
+- (void)KSO_setFontAwesomeString:(NSString *)fontAwesomeString forState:(UIControlState)state; {
+    if (fontAwesomeString == nil) {
         [self.KSO_controlStatesToFontAwesomeStrings removeObjectForKey:@(state)];
         
         [self setImage:nil forState:state];
     }
     else {
-        [self.KSO_controlStatesToFontAwesomeStrings setObject:fontAwesomeIdentifier forKey:@(state)];
+        [self.KSO_controlStatesToFontAwesomeStrings setObject:fontAwesomeString forKey:@(state)];
         
-        UIImage *image = [UIImage KSO_fontAwesomeRegularImageWithString:fontAwesomeIdentifier size:self.KSO_fontAwesomeSize];
+        UIImage *image = [UIImage KSO_fontAwesomeRegularImageWithString:fontAwesomeString size:self.KSO_fontAwesomeSize];
         
         if (self.buttonType == UIButtonTypeSystem) {
             image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];

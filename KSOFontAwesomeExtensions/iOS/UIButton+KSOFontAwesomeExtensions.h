@@ -29,16 +29,16 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (copy,nonatomic,nullable) NSString *KSO_fontAwesomeString;
 /**
- Returns the Font Awesome identifier set for the provided control state.
+ Returns the Font Awesome string set for the provided control state.
  
  @param state The control state
- @return The Font Awesome identifier
+ @return The Font Awesome string
  */
 - (nullable NSString *)KSO_fontAwesomeStringForState:(UIControlState)state;
 /**
- Sets the Font Awesome identifier for the provided control state. Passing nil, clears the Font Awesome string for that control state.
+ Sets the Font Awesome string for the provided control state. Passing nil, clears the Font Awesome string for that control state.
  
- @param fontAwesomeString The Font Awesome identifier
+ @param fontAwesomeString The Font Awesome string
  @param state The control state
  */
 - (void)KSO_setFontAwesomeString:(nullable NSString *)fontAwesomeString forState:(UIControlState)state;
