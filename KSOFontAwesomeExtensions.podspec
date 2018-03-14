@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KSOFontAwesomeExtensions'
-  s.version          = '0.12.3'
+  s.version          = '1.0.0'
   s.summary          = 'A collection of categories on NSString, UIFont/NSFont and UIImage/NSImage to make creation of images using the Font Awesome font easier.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage`, and `UIImage` to make creation of images using the Font Awesome font easier. Support is provided for iOS/macOS/tvOS/watchOS.
+A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage`, and `UIImage` to make creation of images using the Font Awesome font easier. Support is provided for iOS/macOS/tvOS/watchOS. Uses version 5.0.8 of the Font Awesome free fonts.
                        DESC
 
   s.homepage         = 'https://github.com/Kosoku/KSOFontAwesomeExtensions'
@@ -44,19 +44,19 @@ A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage`, and `UI
   s.watchos.exclude_files = 'KSOFontAwesomeExtensions/macOS', 'KSOFontAwesomeExtensions/iOS/UIButton+KSOFontAwesomeExtensions.{h,m}'
   
   s.ios.resource_bundles = {
-    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/FontAwesome.ttf']
+    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.ttf']
   }
   s.osx.resource_bundles = {
-    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/FontAwesome.ttf']
+    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.ttf']
   }
   s.tvos.resource_bundles = {
-    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/FontAwesome.ttf']
+    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.ttf']
   }
 
-  s.ios.frameworks = 'Foundation', 'UIKit'
-  s.tvos.frameworks = 'Foundation', 'UIKit'
+  s.ios.frameworks = 'Foundation', 'UIKit', 'CoreText'
+  s.tvos.frameworks = 'Foundation', 'UIKit', 'CoreText'
   s.watchos.frameworks = 'Foundation', 'UIKit'
-  s.osx.frameworks = 'Foundation', 'AppKit'
+  s.osx.frameworks = 'Foundation', 'AppKit', 'CoreText'
   
   s.dependency 'Stanley'
 end

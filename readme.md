@@ -11,7 +11,7 @@ A collection of categories on `NSString`, `UIFont`, 'NSFont', 'NSImage' and `UII
 
 You can install *KSOFontAwesomeExtensions* using [cocoapods](https://cocoapods.org/), [Carthage](https://github.com/Carthage/Carthage), or as a framework. When installing as a framework, ensure you also link to [Stanley](https://github.com/Kosoku/Stanley) as *KSOFontAwesomeExtensions* relies on it. 
 
-The *FontAwesome.ttf* font is bundled as part of the framework so you do not have to bundle it as part of you app. However, if you are using the framework on watchOS, the font must be included as part of the watchOS app bundle and included in the *Info.plist* using the `UIAppFonts` key.
+The three free Font Awesome fonts are bundled as part of the framework so you do not have to bundle it as part of you app. However, if you are using the framework on watchOS, the fonts must be included as part of the watchOS app bundle and included in the *Info.plist* using the `UIAppFonts` key for both the extension and bundle.
 
 ### Dependencies
 
