@@ -52,7 +52,7 @@ static const void *kFontAwesomeSizeKey = &kFontAwesomeSizeKey;
 - (NSString *)KSO_fontAwesomeStringForState:(UIControlState)state; {
     return self.KSO_controlStatesToFontAwesomeStrings[@(state)];
 }
-- (void)KSO_setFontAwesomeIdentifier:(NSString *)fontAwesomeIdentifier forState:(UIControlState)state; {
+- (void)KSO_setFontAwesomeString:(NSString *)fontAwesomeIdentifier forState:(UIControlState)state; {
     if (fontAwesomeIdentifier == nil) {
         [self.KSO_controlStatesToFontAwesomeStrings removeObjectForKey:@(state)];
         
