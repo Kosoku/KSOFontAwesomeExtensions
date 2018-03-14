@@ -27,7 +27,7 @@ FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameBrand;
 @interface UIFont (KSOFontAwesomeExtensions)
 
 /**
- Set and get the Font Awesome font name. Use this to set a name other than "fa-regular" if necessary.
+ Set and get the Font Awesome font name. Use this to set a name other than "FontAwesome5FreeRegular" if necessary.
  */
 @property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameRegular;
 @property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameSolid;
