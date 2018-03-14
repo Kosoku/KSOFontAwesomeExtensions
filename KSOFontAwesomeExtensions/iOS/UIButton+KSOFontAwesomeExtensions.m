@@ -61,7 +61,7 @@ static const void *kFontAwesomeSizeKey = &kFontAwesomeSizeKey;
     else {
         [self.KSO_controlStatesToFontAwesomeStrings setObject:fontAwesomeIdentifier forKey:@(state)];
         
-        [self setImage:[UIImage KSO_fontAwesomeImageWithString:fontAwesomeIdentifier size:self.KSO_fontAwesomeSize] forState:state];
+        [self setImage:[UIImage KSO_fontAwesomeRegularImageWithString:fontAwesomeIdentifier size:self.KSO_fontAwesomeSize] forState:state];
     }
 }
 

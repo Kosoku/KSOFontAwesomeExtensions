@@ -18,16 +18,20 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- The default name for the Font Awesome font, which is "FontAwesome". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using setKSO_fontAwesomeFontName:.
+ The default name for the Font Awesome font, which is "FontAwesome5FreeRegular". It is easiest to name the font file included in your bundle this name. If not, you need to set the appropriate name using setKSO_fontAwesomeFontName:.
  */
-FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameDefault;
+FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameRegular;
+FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameSolid;
+FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameBrand;
 
 @interface UIFont (KSOFontAwesomeExtensions)
 
 /**
- Set and get the Font Awesome font name. Use this to set a name other than "FontAwesome" if necessary.
+ Set and get the Font Awesome font name. Use this to set a name other than "fa-regular" if necessary.
  */
-@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontName;
+@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameRegular;
+@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameSolid;
+@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameBrand;
 
 /**
  Returns the Font Awesome font at the provided size.
@@ -35,7 +39,10 @@ FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameDefault;
  @param size The font size
  @return The Font Awesome font
  */
-+ (UIFont *)KSO_fontAwesomeFontOfSize:(CGFloat)size;
++ (UIFont *)KSO_fontAwesomeRegularFontOfSize:(CGFloat)size;
++ (UIFont *)KSO_fontAwesomeSolidFontOfSize:(CGFloat)size;
++ (UIFont *)KSO_fontAwesomeBrandFontOfSize:(CGFloat)size;
++ (UIFont *)KSO_fontAwesomeFontWithName:(NSString *)name size:(CGFloat)size;
 
 @end
 

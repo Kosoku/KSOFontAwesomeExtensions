@@ -28,7 +28,7 @@
 - (void)setString:(NSString *)string {
     _string = string;
     
-    [self.interfaceImage setImage:[UIImage KSO_fontAwesomeImageWithString:_string size:CGSizeMake(32, 32)]];
+    [self.interfaceImage setImage:[UIImage KSO_fontAwesomeRegularImageWithString:_string size:CGSizeMake(32, 32)]];
 }
 
 @end

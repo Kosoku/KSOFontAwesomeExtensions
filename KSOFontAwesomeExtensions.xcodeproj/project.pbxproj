@@ -49,6 +49,21 @@
 		0723C3701E9422D70008BA3A /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C32E1E94210A0008BA3A /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0723C3761E9423BF0008BA3A /* TableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0723C3751E9423BF0008BA3A /* TableRowController.m */; };
 		073CF2F61E89CBFE006435C2 /* KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		079718892058970F00841EE8 /* fa-brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079718822058969700841EE8 /* fa-brands.ttf */; };
+		0797188B2058970F00841EE8 /* fa-solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07971884205896B800841EE8 /* fa-solid.ttf */; };
+		0797188C2058971000841EE8 /* fa-brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079718822058969700841EE8 /* fa-brands.ttf */; };
+		0797188E2058971000841EE8 /* fa-solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07971884205896B800841EE8 /* fa-solid.ttf */; };
+		0797188F2058971100841EE8 /* fa-brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079718822058969700841EE8 /* fa-brands.ttf */; };
+		079718912058971100841EE8 /* fa-solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07971884205896B800841EE8 /* fa-solid.ttf */; };
+		079718922058971200841EE8 /* fa-brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079718822058969700841EE8 /* fa-brands.ttf */; };
+		079718942058971200841EE8 /* fa-solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07971884205896B800841EE8 /* fa-solid.ttf */; };
+		079718952058971200841EE8 /* fa-brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 079718822058969700841EE8 /* fa-brands.ttf */; };
+		079718972058971200841EE8 /* fa-solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07971884205896B800841EE8 /* fa-solid.ttf */; };
+		0797189B20589E9600841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
+		0797189C20589E9600841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
+		0797189D20589E9700841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
+		0797189E20589E9800841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
+		0797189F20589E9900841EE8 /* fa-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0797189A20589E7600841EE8 /* fa-regular.ttf */; };
 		07A41E871E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A41E851E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07A41E881E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07A41E861E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m */; };
 		07A41E8B1E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A41E891E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -81,9 +96,6 @@
 		07A41EEE1E8AE02C00F8451F /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41E941E8ACE1700F8451F /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		07A41EF21E8AE03100F8451F /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41ECC1E8AD51400F8451F /* Stanley.framework */; };
 		07A41EF31E8AE03100F8451F /* Stanley.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07A41ECC1E8AD51400F8451F /* Stanley.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		07B96E5F1F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
-		07B96E601F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
-		07B96E611F93DF8100AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
 		07B96E651F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		07B96E661F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		07B96E671F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -92,8 +104,6 @@
 		07B96E6A1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
 		07B96E6B1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
 		07B96E6C1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */; };
-		07B96E6D1F93E36D00AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
-		07B96E6F1F93E8D000AE6AAA /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */; };
 		07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B561E89EB0500824A77 /* KSOFontAwesomeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B541E89EB0500824A77 /* KSOFontAwesomeFunctions.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		07E83B571E89EB0500824A77 /* KSOFontAwesomeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */; };
@@ -255,6 +265,9 @@
 		073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeExtensions.h; sourceTree = "<group>"; };
 		073CF2F51E89CBFE006435C2 /* KSOFontAwesomeExtensions-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSOFontAwesomeExtensions-iOS-Info.plist"; sourceTree = "<group>"; };
 		073CF2FC1E89CC9B006435C2 /* KSOFontAwesomeExtensions-Info.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KSOFontAwesomeExtensions-Info.h"; sourceTree = "<group>"; };
+		079718822058969700841EE8 /* fa-brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-brands.ttf"; sourceTree = "<group>"; };
+		07971884205896B800841EE8 /* fa-solid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid.ttf"; sourceTree = "<group>"; };
+		0797189A20589E7600841EE8 /* fa-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular.ttf"; sourceTree = "<group>"; };
 		07A41E851E8ACAFB00F8451F /* UIImage+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+KSOFontAwesomeExtensions.h"; path = "iOS/UIImage+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
 		07A41E861E8ACAFB00F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage-NSImage+KSOFontAwesomeExtensions.m"; path = "iOS/UIImage-NSImage+KSOFontAwesomeExtensions.m"; sourceTree = "<group>"; };
 		07A41E891E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIButton+KSOFontAwesomeExtensions.h"; path = "iOS/UIButton+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
@@ -283,7 +296,6 @@
 		07A41EE41E8AE02300F8451F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07A41EE71E8AE02300F8451F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07A41EE91E8AE02300F8451F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KSOFontAwesomeExtensionsPrivate.h"; sourceTree = "<group>"; };
 		07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KSOFontAwesomeExtensionsPrivate.m"; sourceTree = "<group>"; };
 		07E83B521E89E9F100824A77 /* KSOFontAwesomeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeDefines.h; sourceTree = "<group>"; };
@@ -463,7 +475,9 @@
 				0723C2F81E941A130008BA3A /* KSOFontAwesomeExtensions-tvOS-Info.plist */,
 				0723C3361E9421440008BA3A /* KSOFontAwesomeExtensions-watchOS-Info.plist */,
 				073CF2FC1E89CC9B006435C2 /* KSOFontAwesomeExtensions-Info.h */,
-				07B96E5E1F93DF8100AE6AAA /* FontAwesome.ttf */,
+				079718822058969700841EE8 /* fa-brands.ttf */,
+				0797189A20589E7600841EE8 /* fa-regular.ttf */,
+				07971884205896B800841EE8 /* fa-solid.ttf */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -864,7 +878,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B96E611F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
+				0797189D20589E9700841EE8 /* fa-regular.ttf in Resources */,
+				0797188F2058971100841EE8 /* fa-brands.ttf in Resources */,
+				079718912058971100841EE8 /* fa-solid.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,7 +906,9 @@
 			files = (
 				0723C34A1E9422AB0008BA3A /* Assets.xcassets in Resources */,
 				0723C3481E9422AB0008BA3A /* Interface.storyboard in Resources */,
-				07B96E6D1F93E36D00AE6AAA /* FontAwesome.ttf in Resources */,
+				0797189E20589E9800841EE8 /* fa-regular.ttf in Resources */,
+				079718942058971200841EE8 /* fa-solid.ttf in Resources */,
+				079718922058971200841EE8 /* fa-brands.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,8 +916,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0797189F20589E9900841EE8 /* fa-regular.ttf in Resources */,
 				0723C35C1E9422AB0008BA3A /* Assets.xcassets in Resources */,
-				07B96E6F1F93E8D000AE6AAA /* FontAwesome.ttf in Resources */,
+				079718972058971200841EE8 /* fa-solid.ttf in Resources */,
+				079718952058971200841EE8 /* fa-brands.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,7 +927,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B96E5F1F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
+				0797189B20589E9600841EE8 /* fa-regular.ttf in Resources */,
+				079718892058970F00841EE8 /* fa-brands.ttf in Resources */,
+				0797188B2058970F00841EE8 /* fa-solid.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +937,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07B96E601F93DF8100AE6AAA /* FontAwesome.ttf in Resources */,
+				0797189C20589E9600841EE8 /* fa-regular.ttf in Resources */,
+				0797188C2058971000841EE8 /* fa-brands.ttf in Resources */,
+				0797188E2058971000841EE8 /* fa-solid.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

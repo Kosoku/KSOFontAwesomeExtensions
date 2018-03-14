@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param size The desired size of the image
  @return The Font Awesome image
  */
-+ (NSImage *)KSO_fontAwesomeImageWithString:(NSString *)string size:(NSSize)size;
++ (NSImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string size:(NSSize)size;
 /**
  Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
  
@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
  @param size The desired size of the image
  @return The Font Awesome image
  */
-+ (NSImage *)KSO_fontAwesomeImageWithString:(NSString *)string foregroundColor:(nullable NSColor *)foregroundColor size:(NSSize)size;
++ (NSImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(nullable NSColor *)foregroundColor size:(NSSize)size;
 /**
  Draws the Font Awesome string into a graphics context of the provided size using the provided foreground and background colors.
  
@@ -53,7 +53,12 @@ NS_ASSUME_NONNULL_BEGIN
  @param size The desired size of the image
  @return The Font Awesome image
  */
-+ (NSImage *)KSO_fontAwesomeImageWithString:(NSString *)string foregroundColor:(nullable NSColor *)foregroundColor backgroundColor:(nullable NSColor *)backgroundColor size:(NSSize)size;
++ (NSImage *)KSO_fontAwesomeRegularImageWithString:(NSString *)string foregroundColor:(nullable NSColor *)foregroundColor backgroundColor:(nullable NSColor *)backgroundColor size:(NSSize)size;
+
++ (NSImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string size:(CGSize)size;
++ (NSImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string size:(CGSize)size;
+
++ (NSImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(nullable NSColor *)foregroundColor backgroundColor:(nullable NSColor *)backgroundColor size:(CGSize)size;
 
 @end
 

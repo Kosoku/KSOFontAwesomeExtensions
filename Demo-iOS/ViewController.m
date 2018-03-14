@@ -50,7 +50,6 @@ static CGSize const kItemSize = {.width=64, .height=64};
 @end
 
 @interface CollectionViewCell : UICollectionViewCell
-@property (copy,nonatomic) NSString *string;
 @property (strong,nonatomic) UIImageView *imageView;
 @end
 
@@ -72,12 +71,6 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [self.imageView setFrame:self.contentView.bounds];
 }
 
-- (void)setString:(NSString *)string {
-    _string = string;
-    
-    self.imageView.image = [UIImage KSO_fontAwesomeImageWithString:_string size:kItemSize];
-}
-
 @end
 
 @interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate,QLPreviewControllerDataSource>
@@ -85,7 +78,10 @@ static CGSize const kItemSize = {.width=64, .height=64};
 
 @property (strong,nonatomic) PreviewItem *previewItem;
 
-@property (copy,nonatomic) NSArray<NSString *> *strings;
+@property (copy,nonatomic) NSArray<NSString *> *solidStrings;
+@property (copy,nonatomic) NSArray<NSString *> *regularStrings;
+@property (copy,nonatomic) NSArray<NSString *> *brandStrings;
+@property (copy,nonatomic) NSArray<NSArray<NSString *> *> *sections;
 @end
 
 @implementation ViewController
@@ -93,7 +89,10 @@ static CGSize const kItemSize = {.width=64, .height=64};
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.strings = @[@"\uf2b9",@"\uf042"];
+    self.solidStrings = @[@"\uf2b9",@"\uf2bb",@"\uf042",@"\uf037",@"\uf039",@"\uf036",@"\uf038",@"\uf0f9",@"\uf2a3"];
+    self.regularStrings = @[@"\uf2b9",@"\uf2bb",@"\uf358",@"\uf359",@"\uf35a",@"\uf35b",@"\uf0f3",@"\uf1f6",@"\uf02e"];
+    self.brandStrings = @[@"\uf26e",@"\uf368",@"\uf369",@"\uf170",@"\uf36a",@"\uf36b",@"\uf36c",@"\uf270",@"\uf42c"];
+    self.sections = @[self.solidStrings,self.regularStrings,self.brandStrings];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -114,25 +113,60 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view][bottom]" options:0 metrics:nil views:@{@"view": self.collectionView, @"top": self.topLayoutGuide, @"bottom": self.bottomLayoutGuide}]];
 }
 
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return self.sections.count;
+}
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return self.sections[section].count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class]) forIndexPath:indexPath];
+    NSString *string = self.sections[indexPath.section][indexPath.row];
+    UIImage *image = nil;
     
-    cell.string = self.strings[indexPath.item];
+    switch (indexPath.section) {
+        case 0:
+            image = [UIImage KSO_fontAwesomeSolidImageWithString:string size:kItemSize];
+            break;
+        case 1:
+            image = [UIImage KSO_fontAwesomeRegularImageWithString:string size:kItemSize];
+            break;
+        case 2:
+            image = [UIImage KSO_fontAwesomeBrandImageWithString:string size:kItemSize];
+            break;
+        default:
+            break;
+    }
+    
+    cell.imageView.image = image;
     
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIImage *image = [UIImage KSO_fontAwesomeImageWithString:self.strings[indexPath.item] foregroundColor:self.collectionView.tintColor size:[UIScreen mainScreen].bounds.size];
+    NSString *string = self.sections[indexPath.section][indexPath.row];
+    UIImage *image = nil;
+    CGSize size = [UIScreen mainScreen].bounds.size;
+    
+    switch (indexPath.section) {
+        case 0:
+            image = [UIImage KSO_fontAwesomeSolidImageWithString:string size:size];
+            break;
+        case 1:
+            image = [UIImage KSO_fontAwesomeRegularImageWithString:string size:size];
+            break;
+        case 2:
+            image = [UIImage KSO_fontAwesomeBrandImageWithString:string size:size];
+            break;
+        default:
+            break;
+    }
     NSData *data = UIImagePNGRepresentation(image);
     NSURL *previewURL = [NSURL fileURLWithPath:[[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]] stringByAppendingPathExtension:@"png"]];
     
     [data writeToURL:previewURL options:NSDataWritingAtomic error:NULL];
     
-    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:self.strings[indexPath.item]]];
+    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:self.sections[indexPath.section][indexPath.row]]];
     
     QLPreviewController *previewController = [[QLPreviewController alloc] init];
     

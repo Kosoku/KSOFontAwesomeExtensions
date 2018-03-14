@@ -20,30 +20,91 @@
 #import "NSFont+KSOFontAwesomeExtensions.h"
 #endif
 #import "KSOFontAwesomeDefines.h"
+#import "NSBundle+KSOFontAwesomeExtensionsPrivate.h"
 
+#import <Stanley/Stanley.h>
+
+#import <CoreText/CoreText.h>
 #import <objc/runtime.h>
 
-NSString *const KSOFontAwesomeFontNameDefault = @"FontAwesome";
-
-static void const *kFontAwesomeFontNameKey = &kFontAwesomeFontNameKey;
+NSString *const KSOFontAwesomeFontNameRegular = @"FontAwesome5FreeRegular";
+NSString *const KSOFontAwesomeFontNameSolid = @"FontAwesome5FreeSolid";
+NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5BrandsRegular";
 
 @implementation KSOFont (KSOFontAwesomeExtensions)
 
-+ (NSString *)KSO_fontAwesomeFontName; {
-    return objc_getAssociatedObject(self, kFontAwesomeFontNameKey) ?: KSOFontAwesomeFontNameDefault;
-}
-+ (void)setKSO_fontAwesomeFontName:(NSString *)fontName; {
-    objc_setAssociatedObject(self, kFontAwesomeFontNameKey, fontName, OBJC_ASSOCIATION_COPY_NONATOMIC);
++ (void)load {
+    void(^block)(NSURL *) = ^(NSURL *fontURL){
+        NSData *fontData = [NSData dataWithContentsOfURL:fontURL];
+        
+        if (fontData != nil) {
+            CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)fontData);
+            CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
+            
+            if (font != NULL) {
+                CFErrorRef outError;
+                if (!CTFontManagerRegisterGraphicsFont(font, &outError)) {
+                    KSTLogObject(outError);
+                    
+                    if (outError != nil) {
+                        CFRelease(outError);
+                    }
+                }
+                
+                CFRelease(font);
+                CFRelease(dataProvider);
+            }
+        }
+    };
+    
+    for (NSURL *fontURL in [NSBundle.KSO_fontAwesomeExtensionsFrameworkBundle URLsForResourcesWithExtension:@"ttf" subdirectory:nil]) {
+        block(fontURL);
+    }
 }
 
-+ (KSOFont *)KSO_fontAwesomeFontOfSize:(CGFloat)size; {
-    KSOFont *retval = [KSOFont fontWithName:[self KSO_fontAwesomeFontName] size:size];
+static void const *kFontAwesomeFontNameKeyRegular = &kFontAwesomeFontNameKeyRegular;
++ (NSString *)KSO_fontAwesomeFontNameRegular; {
+    return objc_getAssociatedObject(self, kFontAwesomeFontNameKeyRegular) ?: KSOFontAwesomeFontNameRegular;
+}
++ (void)setKSO_fontAwesomeFontNameRegular:(NSString *)fontName; {
+    objc_setAssociatedObject(self, kFontAwesomeFontNameKeyRegular, fontName, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+static void const *kFontAwesomeFontNameKeySolid = &kFontAwesomeFontNameKeySolid;
++ (NSString *)KSO_fontAwesomeFontNameSolid {
+    return objc_getAssociatedObject(self, kFontAwesomeFontNameKeySolid) ?: KSOFontAwesomeFontNameSolid;
+}
++ (void)setKSO_fontAwesomeFontNameSolid:(NSString *)KSO_fontAwesomeFontNameSolid {
+    objc_setAssociatedObject(self, kFontAwesomeFontNameKeySolid, KSO_fontAwesomeFontNameSolid, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+static void const *kFontAwesomeFontNameKeyBrand = &kFontAwesomeFontNameKeyBrand;
++ (NSString *)KSO_fontAwesomeFontNameBrand {
+    return objc_getAssociatedObject(self, kFontAwesomeFontNameKeyBrand) ?: KSOFontAwesomeFontNameBrand;
+}
++ (void)setKSO_fontAwesomeFontNameBrand:(NSString *)KSO_fontAwesomeFontNameBrand {
+    objc_setAssociatedObject(self, kFontAwesomeFontNameKeyBrand, KSO_fontAwesomeFontNameBrand, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
++ (KSOFont *)KSO_fontAwesomeRegularFontOfSize:(CGFloat)size; {
+    return [self KSO_fontAwesomeFontWithName:[self KSO_fontAwesomeFontNameRegular] size:size];
+}
++ (KSOFont *)KSO_fontAwesomeSolidFontOfSize:(CGFloat)size; {
+    return [self KSO_fontAwesomeFontWithName:[self KSO_fontAwesomeFontNameSolid] size:size];
+}
++ (KSOFont *)KSO_fontAwesomeBrandFontOfSize:(CGFloat)size; {
+    return [self KSO_fontAwesomeFontWithName:[self KSO_fontAwesomeFontNameBrand] size:size];
+}
++ (KSOFont *)KSO_fontAwesomeFontWithName:(NSString *)name size:(CGFloat)size; {
+    KSOFont *retval = [KSOFont fontWithName:name size:size];
     
+    if (retval == nil) {
 #if (TARGET_OS_WATCH)
-    NSAssert(retval != nil, @"Unable to find font named %@! Add the %@ font to your watchOS app target and watchOS extension target, as well as include it in the Info.plist of both targets using the UIAppFonts key",[self KSO_fontAwesomeFontName],[self KSO_fontAwesomeFontName]);
+        KSTLog(@"Unable to find font named %@! Add the %@ font to your watchOS app target and watchOS extension target, as well as include it in the Info.plist of both targets using the UIAppFonts key",name,name);
 #else
-    NSAssert(retval != nil, @"Unable to find font named %@!",[self KSO_fontAwesomeFontName]);
+        KSTLog( @"Unable to find font named %@!",name);
 #endif
+    }
     
     return retval;
 }

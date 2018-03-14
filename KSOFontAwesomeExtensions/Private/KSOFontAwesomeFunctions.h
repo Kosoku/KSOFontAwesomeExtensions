@@ -21,10 +21,10 @@
 #import <Foundation/NSGeometry.h>
 #endif
 
-#import <KSOFontAwesomeExtensions/KSOFontAwesomeDefines.h>
+#import "KSOFontAwesomeDefines.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-FOUNDATION_EXPORT CGFloat KSOFontAwesomePointSizeAndRectForIconAndSize(NSString *text, KSOSize size, KSORect *outRect);
+FOUNDATION_EXPORT CGFloat KSOFontAwesomePointSizeAndRectForFontTextAndSize(NSString *fontName, NSString *text, KSOSize size, KSORect *outRect);
 
 NS_ASSUME_NONNULL_END
