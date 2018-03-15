@@ -106,5 +106,14 @@
     }
     return nil;
 }
++ (NSString *)hexForString:(NSString *)string; {
+    NSMutableString *retval = [[NSMutableString alloc] init];
+    
+    for (NSUInteger i=0; i<string.length; i++) {
+        [retval appendFormat:@"%04x",[string characterAtIndex:i]];
+    }
+    
+    return retval;
+}
 
 @end

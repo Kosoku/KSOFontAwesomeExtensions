@@ -17,5 +17,6 @@
 
 + (NSArray<StringSection *> *)stringSectionsFromJSON;
 + (KSOImage *)imageForTitle:(NSString *)title string:(NSString *)string size:(KSOSize)size;
++ (NSString *)hexForString:(NSString *)string;
 
 @end

@@ -62,7 +62,6 @@ static CGSize const kItemSize = {.width=64, .height=64};
     self.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
     
     _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-    _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:_titleLabel];
 
     return self;
@@ -77,6 +76,7 @@ static CGSize const kItemSize = {.width=64, .height=64};
 
 @interface CollectionViewCell : UICollectionViewCell
 @property (strong,nonatomic) UIImageView *imageView;
+@property (strong,nonatomic) UILabel *titleLabel;
 @end
 
 @implementation CollectionViewCell
@@ -86,15 +86,21 @@ static CGSize const kItemSize = {.width=64, .height=64};
         return nil;
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    _imageView.translatesAutoresizingMaskIntoConstraints = NO;
     [self.contentView addSubview:_imageView];
     
-    return self;
-}
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _titleLabel.textAlignment = NSTextAlignmentCenter;
+    [self.contentView addSubview:_titleLabel];
     
-    [self.imageView setFrame:self.contentView.bounds];
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": _imageView}]];
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[view]" options:0 metrics:nil views:@{@"view": _imageView}]];
+    
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": _titleLabel}]];
+    [NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view]|" options:0 metrics:nil views:@{@"view": _titleLabel, @"top": _imageView}]];
+    
+    return self;
 }
 
 @end
@@ -119,7 +125,7 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [layout setSectionInset:UIEdgeInsetsMake(8, 8, 0, 8)];
     [layout setMinimumLineSpacing:8.0];
     [layout setMinimumInteritemSpacing:8.0];
-    [layout setItemSize:kItemSize];
+    [layout setEstimatedItemSize:CGSizeMake(kItemSize.width, kItemSize.height + 24)];
     [layout setHeaderReferenceSize:CGSizeMake(0, 32.0)];
     [layout setSectionHeadersPinToVisibleBounds:YES];
     [layout setSectionInset:UIEdgeInsetsMake(8, 0, 8, 0)];
@@ -145,8 +151,10 @@ static CGSize const kItemSize = {.width=64, .height=64};
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class]) forIndexPath:indexPath];
+    NSString *string = self.sections[indexPath.section].strings[indexPath.row];
     
-    cell.imageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.row] size:kItemSize];
+    cell.imageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:string size:kItemSize];
+    cell.titleLabel.text = [StringSection hexForString:string];
     
     return cell;
 }
