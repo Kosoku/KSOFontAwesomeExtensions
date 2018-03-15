@@ -29,6 +29,10 @@ FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameSolid;
  The default Postscript name for the Font Awesome brands font, which is @"FontAwesome5BrandsRegular".
  */
 FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameBrand;
+/**
+ The default Postscript name for the Font Awesome light font, which is @"FontAwesome5ProLight". This is only available with a Font Awesome Pro license.
+ */
+FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameLight;
 
 @interface NSFont (KSOFontAwesomeExtensions)
 
@@ -44,6 +48,10 @@ FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameBrand;
  Set and get the Font Awesome brands font name. Use this to set a name other than @"FontAwesome5BrandsRegular" if necessary.
  */
 @property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameBrand;
+/**
+ Set and get the Font Awesome light font name. Use this to set a name other than @"FontAwesome5ProLight" if necessary.
+ */
+@property (class,copy,nonatomic,null_resettable) NSString *KSO_fontAwesomeFontNameLight;
 
 /**
  Returns the Font Awesome regular font at the provided size.
@@ -66,6 +74,13 @@ FOUNDATION_EXPORT NSString *const KSOFontAwesomeFontNameBrand;
  @return The Font Awesome brands font
  */
 + (nullable NSFont *)KSO_fontAwesomeBrandFontOfSize:(CGFloat)size;
+/**
+ Returns the Font Awesome light font at the provided size.
+ 
+ @param size The font size
+ @return The Font Awesome light font
+ */
++ (nullable NSFont *)KSO_fontAwesomeLightFontOfSize:(CGFloat)size;
 /**
  Returns the Font Awesome font with the provided name at the provided size.
  

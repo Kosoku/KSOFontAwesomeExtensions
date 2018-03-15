@@ -18,7 +18,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- Methods to create images from Font Awesome strings using the respective named font (e.g. regular, solid, or brands). Some strings exist in multiple fonts, ensure you specify the version you want.
+ Methods to create images from Font Awesome strings using the respective named font (e.g. regular, solid, light, or brands). Some strings exist in multiple fonts, ensure you specify the version you want.
  */
 @interface UIImage (KSOFontAwesomeExtensions)
 
@@ -50,6 +50,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (nullable UIImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
 
 /**
+ Returns [self KSO_fontAwesomeLightImageWithString:foregroundColor:size:], passing *string*, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeLightImageWithString:(NSString *)string size:(CGSize)size;
+/**
+ Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, [UIFont KSO_fontAwesomeFontNameLight], *foregroundColor*, nil, and *size*.
+ */
++ (nullable UIImage *)KSO_fontAwesomeLightImageWithString:(NSString *)string foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
+
+/**
  Returns [self KSO_fontAwesomeImageWithString:fontName:foregroundColor:backgroundColor:size:], passing *string*, *fontName*, nil, nil, and *size*.
  */
 + (nullable UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName size:(CGSize)size;
@@ -58,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (nullable UIImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName foregroundColor:(nullable UIColor *)foregroundColor size:(CGSize)size;
 /**
- Returns an image created by drawing the specified string, which must be in Unicode escaped format (e.g. @"\uf2ab"), into an image with the specified foreground and background colors at the specified size. When passing the *fontName* param, you should use one of the class methods KSO_fontAwesomeFontNameRegular, KSO_fontAwesomeFontNameBrand, or KSO_fontAwesomeFontNameSolid.
+ Returns an image created by drawing the specified string, which must be in Unicode escaped format (e.g. @"\uf2ab"), into an image with the specified foreground and background colors at the specified size. When passing the *fontName* param, you should use one of the class methods KSO_fontAwesomeFontNameRegular, KSO_fontAwesomeFontNameBrand, KSO_fontAwesomeFontNameLight, or KSO_fontAwesomeFontNameSolid.
  
  @param string The escaped Unicode to draw into an image
  @param fontName The Font Awesome font to use when drawing the string

@@ -30,6 +30,7 @@
 NSString *const KSOFontAwesomeFontNameRegular = @"FontAwesome5FreeRegular";
 NSString *const KSOFontAwesomeFontNameSolid = @"FontAwesome5FreeSolid";
 NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5BrandsRegular";
+NSString *const KSOFontAwesomeFontNameLight = @"FontAwesome5ProLight";
 
 @implementation KSOFont (KSOFontAwesomeExtensions)
 
@@ -88,6 +89,14 @@ static void const *kFontAwesomeFontNameKeyBrand = &kFontAwesomeFontNameKeyBrand;
     objc_setAssociatedObject(self, kFontAwesomeFontNameKeyBrand, KSO_fontAwesomeFontNameBrand, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
+static void const *kFontAwesomeFontNameKeyLight = &kFontAwesomeFontNameKeyLight;
++ (NSString *)KSO_fontAwesomeFontNameLight {
+    return objc_getAssociatedObject(self, kFontAwesomeFontNameKeyLight) ?: KSOFontAwesomeFontNameLight;
+}
++ (void)setKSO_fontAwesomeFontNameLight:(NSString *)KSO_fontAwesomeFontNameLight {
+    objc_setAssociatedObject(self, kFontAwesomeFontNameKeyLight, KSO_fontAwesomeFontNameLight, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 + (KSOFont *)KSO_fontAwesomeRegularFontOfSize:(CGFloat)size; {
     return [self KSO_fontAwesomeFontWithName:[self KSO_fontAwesomeFontNameRegular] size:size];
 }
@@ -96,6 +105,9 @@ static void const *kFontAwesomeFontNameKeyBrand = &kFontAwesomeFontNameKeyBrand;
 }
 + (KSOFont *)KSO_fontAwesomeBrandFontOfSize:(CGFloat)size; {
     return [self KSO_fontAwesomeFontWithName:[self KSO_fontAwesomeFontNameBrand] size:size];
+}
++ (KSOFont *)KSO_fontAwesomeLightFontOfSize:(CGFloat)size; {
+    return [self KSO_fontAwesomeFontWithName:[self KSO_fontAwesomeFontNameLight] size:size];
 }
 + (KSOFont *)KSO_fontAwesomeFontWithName:(NSString *)name size:(CGFloat)size; {
     KSOFont *retval = [KSOFont fontWithName:name size:size];

@@ -20,7 +20,7 @@
 #import "NSFont+KSOFontAwesomeExtensions.h"
 #endif
 
-#import <Stanley/KSTGeometryFunctions.h>
+#import <Stanley/Stanley.h>
 
 CGFloat KSOFontAwesomePointSizeAndRectForFontTextAndSize(NSString *fontName, NSString *text, KSOSize size, KSORect *outRect) {
     CGFloat pointSize = MIN(size.width, size.height);

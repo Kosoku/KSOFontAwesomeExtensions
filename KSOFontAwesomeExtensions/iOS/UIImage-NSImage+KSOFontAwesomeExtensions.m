@@ -33,18 +33,25 @@
     return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameRegular] foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
 
-+ (KSOImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string size:(KSOSize)size; {
     return [self KSO_fontAwesomeBrandImageWithString:string foregroundColor:nil size:size];
 }
 + (KSOImage *)KSO_fontAwesomeBrandImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size; {
     return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameBrand] foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
 
-+ (KSOImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string size:(CGSize)size; {
++ (KSOImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string size:(KSOSize)size; {
     return [self KSO_fontAwesomeSolidImageWithString:string foregroundColor:nil size:size];
 }
 + (KSOImage *)KSO_fontAwesomeSolidImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size; {
     return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameSolid] foregroundColor:foregroundColor backgroundColor:nil size:size];
+}
+
++ (KSOImage *)KSO_fontAwesomeLightImageWithString:(NSString *)string size:(KSOSize)size; {
+    return [self KSO_fontAwesomeLightImageWithString:string foregroundColor:nil size:size];
+}
++ (KSOImage *)KSO_fontAwesomeLightImageWithString:(NSString *)string foregroundColor:(KSOColor *)foregroundColor size:(KSOSize)size; {
+    return [self KSO_fontAwesomeImageWithString:string fontName:[KSOFont KSO_fontAwesomeFontNameLight] foregroundColor:foregroundColor backgroundColor:nil size:size];
 }
 
 + (KSOImage *)KSO_fontAwesomeImageWithString:(NSString *)string fontName:(NSString *)fontName size:(KSOSize)size; {
