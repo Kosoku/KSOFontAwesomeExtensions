@@ -91,22 +91,8 @@
             continue;
         }
         
-        NSMutableArray *strings = [[NSMutableArray alloc] init];
         NSCharacterSet *charSet = (__bridge_transfer NSCharacterSet *)CTFontCopyCharacterSet((__bridge CTFontRef)font);
-        
-        for (int plane = 0; plane <= 16; plane++) {
-            if ([charSet hasMemberInPlane:plane]) {
-                UTF32Char c;
-                for (c = plane << 16; c < (plane+1) << 16; c++) {
-                    if ([charSet longCharacterIsMember:c]) {
-                        UTF32Char c1 = OSSwapHostToLittleInt32(c);
-                        NSString *s = [[NSString alloc] initWithBytes:&c1 length:4 encoding:NSUTF32LittleEndianStringEncoding];
-                        
-                        [strings addObject:s];
-                    }
-                }
-            }
-        }
+        NSArray *strings = charSet.KST_allStrings;
         
         [retval addObject:[[StringSection alloc] initWithFontName:fontName title:JSON[@"fontNamesToTitles"][fontName] strings:strings]];
     }
