@@ -81,12 +81,12 @@ static CGSize const kItemSize = {.width=128, .height=128};
     return self.sections.count;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.sections[section].strings.count;
+    return self.sections[section].items.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class]) forIndexPath:indexPath];
     
-    cell.imageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.row] size:kItemSize];
+    cell.imageView.image = [StringSection imageForFontName:self.sections[indexPath.section].fontName string:self.sections[indexPath.section].items[indexPath.row].string size:kItemSize];
     
     return cell;
 }

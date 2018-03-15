@@ -106,11 +106,13 @@ static CGSize const kItemSize = {.width=64, .height=64};
 @end
 
 @interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate,QLPreviewControllerDataSource>
+@property (strong,nonatomic) UITextField *searchField;
 @property (strong,nonatomic) UICollectionView *collectionView;
 
 @property (strong,nonatomic) PreviewItem *previewItem;
 
 @property (copy,nonatomic) NSArray<StringSection *> *sections;
+@property (copy,nonatomic) NSArray<StringSection *> *filteredSections;
 @end
 
 @implementation ViewController
@@ -119,16 +121,26 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [super viewDidLoad];
     
     self.sections = [StringSection stringSectionsFromJSON];
+    self.filteredSections = self.sections;
+    
+    self.searchField = [[UITextField alloc] initWithFrame:CGRectZero];
+    self.searchField.translatesAutoresizingMaskIntoConstraints = NO;
+    self.searchField.borderStyle = UITextBorderStyleRoundedRect;
+    self.searchField.placeholder = @"Search by hex";
+    [self.searchField addTarget:self action:@selector(_searchFieldAction:) forControlEvents:UIControlEventEditingChanged];
+    [self.view addSubview:self.searchField];
+    
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[view]-|" options:0 metrics:nil views:@{@"view": self.searchField}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view]" options:0 metrics:nil views:@{@"view": self.searchField, @"top": self.topLayoutGuide}]];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
-    [layout setSectionInset:UIEdgeInsetsMake(8, 8, 0, 8)];
+    [layout setSectionInset:UIEdgeInsetsMake(8, 8, 8, 8)];
     [layout setMinimumLineSpacing:8.0];
     [layout setMinimumInteritemSpacing:8.0];
     [layout setEstimatedItemSize:CGSizeMake(kItemSize.width, kItemSize.height + 24)];
     [layout setHeaderReferenceSize:CGSizeMake(0, 32.0)];
     [layout setSectionHeadersPinToVisibleBounds:YES];
-    [layout setSectionInset:UIEdgeInsetsMake(8, 0, 8, 0)];
     
     [self setCollectionView:[[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout]];
     [self.collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -140,21 +152,21 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [self.view addSubview:self.collectionView];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": self.collectionView}]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view][bottom]" options:0 metrics:nil views:@{@"view": self.collectionView, @"top": self.topLayoutGuide, @"bottom": self.bottomLayoutGuide}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top]-[view][bottom]" options:0 metrics:nil views:@{@"view": self.collectionView, @"top": self.searchField, @"bottom": self.bottomLayoutGuide}]];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return self.sections.count;
+    return self.filteredSections.count;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.sections[section].strings.count;
+    return self.filteredSections[section].items.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class]) forIndexPath:indexPath];
-    NSString *string = self.sections[indexPath.section].strings[indexPath.row];
+    NSString *string = self.filteredSections[indexPath.section].items[indexPath.row].string;
     
-    cell.imageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:string size:kItemSize];
-    cell.titleLabel.text = [StringSection hexForString:string];
+    cell.imageView.image = [StringSection imageForFontName:self.filteredSections[indexPath.section].fontName string:string size:kItemSize];
+    cell.titleLabel.text = self.filteredSections[indexPath.section].items[indexPath.row].title;
     
     return cell;
 }
@@ -162,7 +174,7 @@ static CGSize const kItemSize = {.width=64, .height=64};
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         CollectionViewSectionHeader *retval = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass(CollectionViewSectionHeader.class) forIndexPath:indexPath];
         
-        retval.titleLabel.text = self.sections[indexPath.section].title;
+        retval.titleLabel.text = self.filteredSections[indexPath.section].title;
         
         return retval;
     }
@@ -171,13 +183,13 @@ static CGSize const kItemSize = {.width=64, .height=64};
 
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIImage *image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.row] size:[UIScreen mainScreen].bounds.size];
+    UIImage *image = [StringSection imageForFontName:self.filteredSections[indexPath.section].fontName string:self.filteredSections[indexPath.section].items[indexPath.row].string size:[UIScreen mainScreen].bounds.size];
     NSData *data = UIImagePNGRepresentation(image);
     NSURL *previewURL = [NSURL fileURLWithPath:[[NSTemporaryDirectory() stringByAppendingPathComponent:[[NSUUID UUID] UUIDString]] stringByAppendingPathExtension:@"png"]];
     
     [data writeToURL:previewURL options:NSDataWritingAtomic error:NULL];
     
-    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:self.sections[indexPath.section].title]];
+    [self setPreviewItem:[[PreviewItem alloc] initWithURL:previewURL title:self.filteredSections[indexPath.section].title]];
     
     QLPreviewController *previewController = [[QLPreviewController alloc] init];
     
@@ -191,6 +203,34 @@ static CGSize const kItemSize = {.width=64, .height=64};
 }
 - (id<QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index {
     return self.previewItem;
+}
+
+- (IBAction)_searchFieldAction:(id)sender {
+    if (self.searchField.text.length > 0) {
+        NSMutableArray *sections = [[NSMutableArray alloc] init];
+        
+        for (StringSection *ss in self.sections) {
+            NSMutableArray *items = [[NSMutableArray alloc] init];
+            
+            for (StringItem *si in ss.items) {
+                if ([si.title rangeOfString:self.searchField.text options:NSCaseInsensitiveSearch|NSAnchoredSearch].length > 0) {
+                    [items addObject:si];
+                }
+            }
+            
+            if (items.count > 0) {
+                [sections addObject:[[StringSection alloc] initWithFontName:ss.fontName title:ss.title items:items]];
+            }
+        }
+        
+        self.filteredSections = sections;
+    }
+    else {
+        self.filteredSections = self.sections;
+    }
+    
+    [self.collectionView reloadData];
+    [self.collectionView setContentOffset:CGPointZero];
 }
 
 @end

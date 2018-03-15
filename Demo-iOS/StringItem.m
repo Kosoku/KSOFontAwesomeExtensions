@@ -1,9 +1,9 @@
 //
-//  TableRowController.m
+//  StringItem.m
 //  KSOFontAwesomeExtensions
 //
-//  Created by William Towe on 4/4/17.
-//  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
+//  Created by William Towe on 3/15/18.
+//  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 //
@@ -13,22 +13,24 @@
 //
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-#import "TableRowController.h"
+#import "StringItem.h"
+#import "StringSection.h"
 
-#import <WatchKit/WatchKit.h>
-
-@interface TableRowController ()
-@property (weak,nonatomic) IBOutlet WKInterfaceImage *interfaceImage;
-@property (weak,nonatomic) IBOutlet WKInterfaceLabel *interfaceLabel;
+@interface StringItem ()
+@property (readwrite,copy,nonatomic) NSString *title;
+@property (readwrite,copy,nonatomic) NSString *string;
 @end
 
-@implementation TableRowController
+@implementation StringItem
 
-- (void)setImage:(UIImage *)image {
-    [self.interfaceImage setImage:image];
-}
-- (void)setString:(NSString *)string {
-    [self.interfaceLabel setText:string];
+- (instancetype)initWithString:(NSString *)string {
+    if (!(self = [super init]))
+        return nil;
+    
+    _string = string;
+    _title = [StringSection hexForString:_string];
+    
+    return self;
 }
 
 @end

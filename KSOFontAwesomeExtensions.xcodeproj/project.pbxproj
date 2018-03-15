@@ -120,6 +120,10 @@
 		07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */; };
 		07E83B631E89EF8B00824A77 /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E83B621E89EF8B00824A77 /* Stanley.framework */; };
 		07FEAD8A205A516E005743FF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 07FEAD89205A516E005743FF /* Fonts */; };
+		07FEAD8D205A65BB005743FF /* StringItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD8C205A65BB005743FF /* StringItem.m */; };
+		07FEAD8E205A65BB005743FF /* StringItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD8C205A65BB005743FF /* StringItem.m */; };
+		07FEAD8F205A65BB005743FF /* StringItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD8C205A65BB005743FF /* StringItem.m */; };
+		07FEAD90205A65BB005743FF /* StringItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FEAD8C205A65BB005743FF /* StringItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -319,6 +323,8 @@
 		07E83B5D1E89ED8200824A77 /* NSFont+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFont+KSOFontAwesomeExtensions.h"; path = "macOS/NSFont+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
 		07E83B621E89EF8B00824A77 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
 		07FEAD89205A516E005743FF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		07FEAD8B205A65BB005743FF /* StringItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringItem.h; sourceTree = "<group>"; };
+		07FEAD8C205A65BB005743FF /* StringItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +528,8 @@
 				07A41EB91E8AD3A900F8451F /* ViewController.m */,
 				079718B02059B4AE00841EE8 /* StringSection.h */,
 				079718B12059B4AE00841EE8 /* StringSection.m */,
+				07FEAD8B205A65BB005743FF /* StringItem.h */,
+				07FEAD8C205A65BB005743FF /* StringItem.m */,
 				07A41EBB1E8AD3A900F8451F /* Main.storyboard */,
 				07A41EBE1E8AD3A900F8451F /* Assets.xcassets */,
 				07A41EC01E8AD3A900F8451F /* LaunchScreen.storyboard */,
@@ -1071,6 +1079,7 @@
 				0723C3091E941B860008BA3A /* ViewController.m in Sources */,
 				0723C3061E941B860008BA3A /* AppDelegate.m in Sources */,
 				079718B42059B4AE00841EE8 /* StringSection.m in Sources */,
+				07FEAD8F205A65BB005743FF /* StringItem.m in Sources */,
 				0723C3031E941B860008BA3A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1093,6 +1102,7 @@
 				0723C35A1E9422AB0008BA3A /* ExtensionDelegate.m in Sources */,
 				0723C3571E9422AB0008BA3A /* InterfaceController.m in Sources */,
 				079718B52059B4AE00841EE8 /* StringSection.m in Sources */,
+				07FEAD90205A65BB005743FF /* StringItem.m in Sources */,
 				0723C3761E9423BF0008BA3A /* TableRowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1127,6 +1137,7 @@
 				07A41EBA1E8AD3A900F8451F /* ViewController.m in Sources */,
 				07A41EB71E8AD3A900F8451F /* AppDelegate.m in Sources */,
 				079718B22059B4AE00841EE8 /* StringSection.m in Sources */,
+				07FEAD8D205A65BB005743FF /* StringItem.m in Sources */,
 				07A41EB41E8AD3A900F8451F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1138,6 +1149,7 @@
 				07A41EE31E8AE02300F8451F /* ViewController.m in Sources */,
 				07A41EE01E8AE02300F8451F /* main.m in Sources */,
 				079718B32059B4AE00841EE8 /* StringSection.m in Sources */,
+				07FEAD8E205A65BB005743FF /* StringItem.m in Sources */,
 				07A41EDD1E8AE02300F8451F /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

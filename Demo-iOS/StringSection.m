@@ -5,6 +5,13 @@
 //  Created by William Towe on 3/14/18.
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
+//  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+//
+//  1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+//
+//  2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import "StringSection.h"
 
@@ -14,8 +21,9 @@
 #import <CoreText/CoreText.h>
 
 @interface StringSection ()
+@property (readwrite,copy,nonatomic) NSString *fontName;
 @property (readwrite,copy,nonatomic) NSString *title;
-@property (readwrite,copy,nonatomic) NSArray<NSString *> *strings;
+@property (readwrite,copy,nonatomic) NSArray<StringItem *> *items;
 @end
 
 @implementation StringSection
@@ -52,23 +60,32 @@
         block(fontURL);
     }
 #endif
-    
-    for (NSString *fontName in [UIFont fontNamesForFamilyName:@"Font Awesome 5 Pro"]) {
-        if ([fontName isEqualToString:@"FontAwesome5ProRegular"]) {
-            [UIFont setKSO_fontAwesomeFontNameRegular:fontName];
-        }
-        else if ([fontName isEqualToString:@"FontAwesome5ProSolid"]) {
-            [UIFont setKSO_fontAwesomeFontNameSolid:fontName];
-        }
-    }
 }
 
-- (instancetype)initWithTitle:(NSString *)title strings:(NSArray<NSString *> *)strings; {
+- (instancetype)initWithFontName:(NSString *)fontName title:(NSString *)title strings:(NSArray<NSString *> *)strings; {
     if (!(self = [super init]))
         return nil;
     
+    _fontName = fontName;
     _title = title;
-    _strings = strings;
+    
+    NSMutableArray *temp = [[NSMutableArray alloc] init];
+    
+    for (NSString *string in strings) {
+        [temp addObject:[[StringItem alloc] initWithString:string]];
+    }
+    
+    _items = temp;
+    
+    return self;
+}
+- (instancetype)initWithFontName:(NSString *)fontName title:(NSString *)title items:(NSArray<StringItem *> *)items; {
+    if (!(self = [super init]))
+        return nil;
+    
+    _fontName = fontName;
+    _title = title;
+    _items = items;
     
     return self;
 }
@@ -79,32 +96,38 @@
     NSDictionary *JSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     NSMutableArray *retval = [[NSMutableArray alloc] init];
     
-    for (NSString *key in JSON[@"order"]) {
-        if ([key isEqualToString:@"light"]) {
-            if (![[UIFont fontNamesForFamilyName:@"Font Awesome 5 Pro"] containsObject:[UIFont KSO_fontAwesomeFontNameLight]]) {
-                continue;
+    for (NSString *fontName in JSON[@"order"]) {
+        KSOFont *font = [KSOFont fontWithName:fontName size:17.0];
+        
+        if (font == nil) {
+            continue;
+        }
+        
+        NSMutableArray *strings = [[NSMutableArray alloc] init];
+        NSCharacterSet *charSet = (__bridge_transfer NSCharacterSet *)CTFontCopyCharacterSet((__bridge CTFontRef)font);
+        
+        for (int plane = 0; plane <= 16; plane++) {
+            if ([charSet hasMemberInPlane:plane]) {
+                UTF32Char c;
+                for (c = plane << 16; c < (plane+1) << 16; c++) {
+                    if ([charSet longCharacterIsMember:c]) {
+                        UTF32Char c1 = OSSwapHostToLittleInt32(c);
+                        NSString *s = [[NSString alloc] initWithBytes:&c1 length:4 encoding:NSUTF32LittleEndianStringEncoding];
+                        
+                        [strings addObject:s];
+                    }
+                }
             }
         }
-        [retval addObject:[[StringSection alloc] initWithTitle:key.localizedCapitalizedString strings:JSON[key]]];
+        
+        [retval addObject:[[StringSection alloc] initWithFontName:fontName title:JSON[@"fontNamesToTitles"][fontName] strings:strings]];
     }
     
     return retval;
     
 }
-+ (KSOImage *)imageForTitle:(NSString *)title string:(NSString *)string size:(KSOSize)size; {
-    if ([title.lowercaseString isEqualToString:@"regular"]) {
-        return [KSOImage KSO_fontAwesomeRegularImageWithString:string size:size];
-    }
-    else if ([title.lowercaseString isEqualToString:@"solid"]) {
-        return [KSOImage KSO_fontAwesomeSolidImageWithString:string size:size];
-    }
-    else if ([title.lowercaseString isEqualToString:@"brands"]) {
-        return [KSOImage KSO_fontAwesomeBrandImageWithString:string size:size];
-    }
-    else if ([title.lowercaseString isEqualToString:@"light"]) {
-        return [KSOImage KSO_fontAwesomeLightImageWithString:string size:size];
-    }
-    return nil;
++ (KSOImage *)imageForFontName:(NSString *)fontName string:(NSString *)string size:(KSOSize)size; {
+    return [KSOImage KSO_fontAwesomeImageWithString:string fontName:fontName size:size];
 }
 + (NSString *)hexForString:(NSString *)string; {
     NSMutableString *retval = [[NSMutableString alloc] init];

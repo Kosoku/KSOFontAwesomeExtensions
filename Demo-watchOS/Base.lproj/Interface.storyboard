@@ -19,11 +19,13 @@
                                 <tableRow identifier="TableRowController" id="9YB-Vd-C3q" customClass="TableRowController">
                                     <group key="rootItem" width="1" alignment="left" id="O7i-OM-sXY">
                                         <items>
-                                            <imageView alignment="center" verticalAlignment="center" id="a5c-i2-9zR"/>
+                                            <imageView alignment="left" verticalAlignment="center" id="a5c-i2-9zR"/>
+                                            <label height="25" alignment="left" verticalAlignment="center" text="Label" id="fD9-tT-LdH"/>
                                         </items>
                                     </group>
                                     <connections>
                                         <outlet property="interfaceImage" destination="a5c-i2-9zR" id="hCi-LZ-4Jp"/>
+                                        <outlet property="interfaceLabel" destination="fD9-tT-LdH" id="ger-Ea-qbT"/>
                                     </connections>
                                 </tableRow>
                             </items>
