@@ -229,9 +229,21 @@
 		"\uf270",
 		"\uf42c"
 	],
+	"light": [
+		"\uf2b9",
+		"\uf2bb",
+		"\uf042",
+		"\uf34e",
+		"\uf037",
+		"\uf039",
+		"\uf036",
+		"\uf038",
+		"\uf461"
+	],
 	"order": [
-		"solid",
+		"light",
 		"regular",
+		"solid",
 		"brands"
 	]
 }

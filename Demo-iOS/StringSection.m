@@ -34,6 +34,11 @@
     NSMutableArray *retval = [[NSMutableArray alloc] init];
     
     for (NSString *key in JSON[@"order"]) {
+        if ([key isEqualToString:@"light"]) {
+            if (![[UIFont fontNamesForFamilyName:@"Font Awesome 5 Pro"] containsObject:[UIFont KSO_fontAwesomeFontNameLight]]) {
+                continue;
+            }
+        }
         [retval addObject:[[StringSection alloc] initWithTitle:key.localizedCapitalizedString strings:JSON[key]]];
     }
     
@@ -49,6 +54,9 @@
     }
     else if ([title.lowercaseString isEqualToString:@"brands"]) {
         return [KSOImage KSO_fontAwesomeBrandImageWithString:string size:size];
+    }
+    else if ([title.lowercaseString isEqualToString:@"light"]) {
+        return [KSOImage KSO_fontAwesomeLightImageWithString:string size:size];
     }
     return nil;
 }

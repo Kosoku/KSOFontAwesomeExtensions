@@ -6,12 +6,7 @@
 //  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 
-#import <TargetConditionals.h>
-#if (TARGET_OS_IPHONE)
-#import <UIKit/UIKit.h>
-#else
-#import <AppKit/AppKit.h>
-#endif
+#import <KSOFontAwesomeExtensions/KSOFontAwesomeDefines.h>
 
 @interface StringSection : NSObject
 
@@ -21,10 +16,6 @@
 - (instancetype)initWithTitle:(NSString *)title strings:(NSArray<NSString *> *)strings;
 
 + (NSArray<StringSection *> *)stringSectionsFromJSON;
-#if (TARGET_OS_IPHONE)
-+ (UIImage *)imageForTitle:(NSString *)title string:(NSString *)string size:(CGSize)size;
-#else
-+ (NSImage *)imageForTitle:(NSString *)title string:(NSString *)string size:(NSSize)size;
-#endif
++ (KSOImage *)imageForTitle:(NSString *)title string:(NSString *)string size:(KSOSize)size;
 
 @end
