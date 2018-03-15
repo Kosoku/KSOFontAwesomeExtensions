@@ -119,6 +119,7 @@
 		07E83B5B1E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07E83B591E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */; };
 		07E83B631E89EF8B00824A77 /* Stanley.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E83B621E89EF8B00824A77 /* Stanley.framework */; };
+		07FEAD8A205A516E005743FF /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 07FEAD89205A516E005743FF /* Fonts */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -317,6 +318,7 @@
 		07E83B5A1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont-NSFont+KSOFontAwesomeExtensions.m"; sourceTree = "<group>"; };
 		07E83B5D1E89ED8200824A77 /* NSFont+KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSFont+KSOFontAwesomeExtensions.h"; path = "macOS/NSFont+KSOFontAwesomeExtensions.h"; sourceTree = "<group>"; };
 		07E83B621E89EF8B00824A77 /* Stanley.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stanley.framework; path = "Vendor/Stanley/build/Debug-iphoneos/Stanley.framework"; sourceTree = "<group>"; };
+		07FEAD89205A516E005743FF /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,6 +527,7 @@
 				07A41EC01E8AD3A900F8451F /* LaunchScreen.storyboard */,
 				07A41EC31E8AD3A900F8451F /* Info.plist */,
 				079718AA2059B3B900841EE8 /* strings.json */,
+				07FEAD89205A516E005743FF /* Fonts */,
 				07A41EB21E8AD3A900F8451F /* Supporting Files */,
 			);
 			path = "Demo-iOS";
@@ -969,6 +972,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FEAD8A205A516E005743FF /* Fonts in Resources */,
 				07A41EC21E8AD3A900F8451F /* LaunchScreen.storyboard in Resources */,
 				07A41EBF1E8AD3A900F8451F /* Assets.xcassets in Resources */,
 				079718AB2059B3B900841EE8 /* strings.json in Resources */,
