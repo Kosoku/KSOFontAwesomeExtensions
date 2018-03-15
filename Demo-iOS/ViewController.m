@@ -50,6 +50,31 @@ static CGSize const kItemSize = {.width=64, .height=64};
 
 @end
 
+@interface CollectionViewSectionHeader : UICollectionReusableView
+@property (strong,nonatomic) UILabel *titleLabel;
+@end
+
+@implementation CollectionViewSectionHeader
+- (instancetype)initWithFrame:(CGRect)frame {
+    if (!(self = [super initWithFrame:frame]))
+        return nil;
+    
+    self.backgroundColor = [UIColor colorWithWhite:0.95 alpha:1];
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    _titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    [self addSubview:_titleLabel];
+
+    return self;
+}
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    
+    self.titleLabel.frame = CGRectMake(8.0, 0, CGRectGetWidth(self.bounds) - 16.0, CGRectGetHeight(self.bounds));
+}
+@end
+
 @interface CollectionViewCell : UICollectionViewCell
 @property (strong,nonatomic) UIImageView *imageView;
 @end
@@ -95,10 +120,14 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [layout setMinimumLineSpacing:8.0];
     [layout setMinimumInteritemSpacing:8.0];
     [layout setItemSize:kItemSize];
+    [layout setHeaderReferenceSize:CGSizeMake(0, 32.0)];
+    [layout setSectionHeadersPinToVisibleBounds:YES];
+    [layout setSectionInset:UIEdgeInsetsMake(8, 0, 8, 0)];
     
     [self setCollectionView:[[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout]];
     [self.collectionView setTranslatesAutoresizingMaskIntoConstraints:NO];
     [self.collectionView setBackgroundColor:[UIColor whiteColor]];
+    [self.collectionView registerClass:CollectionViewSectionHeader.class forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass(CollectionViewSectionHeader.class)];
     [self.collectionView registerClass:[CollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([CollectionViewCell class])];
     [self.collectionView setDataSource:self];
     [self.collectionView setDelegate:self];
@@ -120,6 +149,16 @@ static CGSize const kItemSize = {.width=64, .height=64};
     cell.imageView.image = [StringSection imageForTitle:self.sections[indexPath.section].title string:self.sections[indexPath.section].strings[indexPath.row] size:kItemSize];
     
     return cell;
+}
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
+        CollectionViewSectionHeader *retval = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass(CollectionViewSectionHeader.class) forIndexPath:indexPath];
+        
+        retval.titleLabel.text = self.sections[indexPath.section].title;
+        
+        return retval;
+    }
+    return nil;
 }
 
 
