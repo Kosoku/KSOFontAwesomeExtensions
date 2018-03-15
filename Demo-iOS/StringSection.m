@@ -33,25 +33,13 @@
         return;
     }
 #if (!TARGET_OS_WATCH)
-    void(^block)(NSURL *) = ^(NSURL *fontURL){
-        NSData *fontData = [NSData dataWithContentsOfURL:fontURL];
-        
-        if (fontData != nil) {
-            CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)fontData);
-            CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
-            
-            if (font != NULL) {
-                CFErrorRef outError;
-                if (!CTFontManagerRegisterGraphicsFont(font, &outError)) {
-                    KSTLogObject(outError);
-                    
-                    if (outError != nil) {
-                        CFRelease(outError);
-                    }
-                }
+    void(^block)(NSURL *) = ^(NSURL *fontURL) {
+        CFErrorRef outErrorRef;
+        if (!CTFontManagerRegisterFontsForURL((__bridge CFURLRef)fontURL, kCTFontManagerScopeProcess, &outErrorRef)) {
+            if (outErrorRef != NULL) {
+                NSError *outError = (__bridge_transfer NSError *)outErrorRef;
                 
-                CFRelease(font);
-                CFRelease(dataProvider);
+                KSTLogObject(outError);
             }
         }
     };
