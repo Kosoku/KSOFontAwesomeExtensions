@@ -5,7 +5,7 @@
 [![Platform](http://img.shields.io/cocoapods/p/KSOFontAwesomeExtensions.svg)]()
 [![License](http://img.shields.io/cocoapods/l/KSOFontAwesomeExtensions.svg)](https://github.com/Kosoku/KSOFontAwesomeExtensions/blob/master/license.txt)
 
-A collection of categories on `NSString`, `UIFont`, 'NSFont', 'NSImage' and `UIImage` to make creation of images using the Font Awesome font easier.
+A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage` and `UIImage` to make creation of images using the Font Awesome font easier.
 
 ### Installation
 
