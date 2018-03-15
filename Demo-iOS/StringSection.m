@@ -51,6 +51,7 @@
     for (NSURL *fontURL in [NSBundle.mainBundle URLsForResourcesWithExtension:@"ttf" subdirectory:@"Fonts"]) {
         block(fontURL);
     }
+#endif
     
     for (NSString *fontName in [UIFont fontNamesForFamilyName:@"Font Awesome 5 Pro"]) {
         if ([fontName isEqualToString:@"FontAwesome5ProRegular"]) {
@@ -60,7 +61,6 @@
             [UIFont setKSO_fontAwesomeFontNameSolid:fontName];
         }
     }
-#endif
 }
 
 - (instancetype)initWithTitle:(NSString *)title strings:(NSArray<NSString *> *)strings; {
