@@ -9,6 +9,9 @@
 #import "StringSection.h"
 
 #import <KSOFontAwesomeExtensions/KSOFontAwesomeExtensions.h>
+#import <Stanley/Stanley.h>
+
+#import <CoreText/CoreText.h>
 
 @interface StringSection ()
 @property (readwrite,copy,nonatomic) NSString *title;
@@ -16,6 +19,40 @@
 @end
 
 @implementation StringSection
+
++ (void)initialize {
+    if (self != StringSection.class) {
+        return;
+    }
+#if (!TARGET_OS_WATCH)
+    void(^block)(NSURL *) = ^(NSURL *fontURL){
+        NSData *fontData = [NSData dataWithContentsOfURL:fontURL];
+        
+        if (fontData != nil) {
+            CGDataProviderRef dataProvider = CGDataProviderCreateWithCFData((__bridge CFDataRef)fontData);
+            CGFontRef font = CGFontCreateWithDataProvider(dataProvider);
+            
+            if (font != NULL) {
+                CFErrorRef outError;
+                if (!CTFontManagerRegisterGraphicsFont(font, &outError)) {
+                    KSTLogObject(outError);
+                    
+                    if (outError != nil) {
+                        CFRelease(outError);
+                    }
+                }
+                
+                CFRelease(font);
+                CFRelease(dataProvider);
+            }
+        }
+    };
+    
+    for (NSURL *fontURL in [NSBundle.mainBundle URLsForResourcesWithExtension:@"ttf" subdirectory:@"Fonts"]) {
+        block(fontURL);
+    }
+#endif
+}
 
 - (instancetype)initWithTitle:(NSString *)title strings:(NSArray<NSString *> *)strings; {
     if (!(self = [super init]))
