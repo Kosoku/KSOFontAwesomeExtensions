@@ -61,7 +61,7 @@ static const void *kFontAwesomeSizeKey = &kFontAwesomeSizeKey;
     else {
         [self.KSO_controlStatesToFontAwesomeStrings setObject:fontAwesomeString forKey:@(state)];
         
-        UIImage *image = [UIImage KSO_fontAwesomeRegularImageWithString:fontAwesomeString size:self.KSO_fontAwesomeSize];
+        UIImage *image = [UIImage KSO_fontAwesomeSolidImageWithString:fontAwesomeString size:self.KSO_fontAwesomeSize];
         
         if (self.buttonType == UIButtonTypeSystem) {
             image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
