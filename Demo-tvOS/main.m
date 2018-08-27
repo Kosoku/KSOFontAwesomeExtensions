@@ -3,7 +3,7 @@
 //  Demo-tvOS
 //
 //  Created by William Towe on 4/4/17.
-//  Copyright © 2017 Kosoku Interactive, LLC. All rights reserved.
+//  Copyright © 2018 Kosoku Interactive, LLC. All rights reserved.
 //
 //  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 //
