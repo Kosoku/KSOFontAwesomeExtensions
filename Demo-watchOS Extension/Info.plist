@@ -32,9 +32,9 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>fa-regular.ttf</string>
-		<string>fa-solid.ttf</string>
-		<string>fa-brands.ttf</string>
+		<string>fa-regular-400.ttf</string>
+		<string>fa-solid-900.ttf</string>
+		<string>fa-brands-400.ttf</string>
 	</array>
 	<key>WKExtensionDelegateClassName</key>
 	<string>ExtensionDelegate</string>
