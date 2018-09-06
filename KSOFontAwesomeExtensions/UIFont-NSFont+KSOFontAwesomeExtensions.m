@@ -19,7 +19,6 @@
 #else
 #import "NSFont+KSOFontAwesomeExtensions.h"
 #endif
-#import "KSOFontAwesomeDefines.h"
 #import "NSBundle+KSOFontAwesomeExtensionsPrivate.h"
 
 #import <Stanley/Stanley.h>
@@ -28,7 +27,9 @@
 #import <objc/runtime.h>
 
 NSString *const KSOFontAwesomeFontNameRegular = @"FontAwesome5FreeRegular";
+NSString *const KSOFontAwesomeFontNameRegularPro = @"FontAwesome5ProRegular";
 NSString *const KSOFontAwesomeFontNameSolid = @"FontAwesome5FreeSolid";
+NSString *const KSOFontAwesomeFontNameSolidPro = @"FontAwesome5ProSolid";
 NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5BrandsRegular";
 NSString *const KSOFontAwesomeFontNameLight = @"FontAwesome5ProLight";
 

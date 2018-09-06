@@ -61,4 +61,33 @@
 
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
+/**
+ The default Postscript name for the Font Awesome regular font, which is @"FontAwesome5FreeRegular".
+ */
+FOUNDATION_EXTERN NSString *const KSOFontAwesomeFontNameRegular;
+/**
+ The default Postscript name for the Font Awesome Pro regular font, which is @"FontAwesome5ProRegular". This is only available with a Font Awesome Pro license.
+ */
+FOUNDATION_EXTERN NSString *const KSOFontAwesomeFontNameRegularPro;
+/**
+ The default Postscript name for the Font Awesome solid font, which is @"FontAwesome5FreeSolid".
+ */
+FOUNDATION_EXTERN NSString *const KSOFontAwesomeFontNameSolid;
+/**
+ The default Postscript name for the Font Awesome Pro solid font, which is @"FontAwesome5ProSolid". This is only available with a Font Awesome Pro license.
+ */
+FOUNDATION_EXTERN NSString *const KSOFontAwesomeFontNameSolidPro;
+/**
+ The default Postscript name for the Font Awesome brands font, which is @"FontAwesome5BrandsRegular".
+ */
+FOUNDATION_EXTERN NSString *const KSOFontAwesomeFontNameBrand;
+/**
+ The default Postscript name for the Font Awesome light font, which is @"FontAwesome5ProLight". This is only available with a Font Awesome Pro license.
+ */
+FOUNDATION_EXTERN NSString *const KSOFontAwesomeFontNameLight;
+
+NS_ASSUME_NONNULL_END
+
 #endif
