@@ -48,6 +48,14 @@
 		0723C36F1E9422D70008BA3A /* KSOFontAwesomeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C32E1E94210A0008BA3A /* KSOFontAwesomeExtensions.framework */; };
 		0723C3701E9422D70008BA3A /* KSOFontAwesomeExtensions.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0723C32E1E94210A0008BA3A /* KSOFontAwesomeExtensions.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0723C3761E9423BF0008BA3A /* TableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0723C3751E9423BF0008BA3A /* TableRowController.m */; };
+		0727FFA4218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0727FFA2218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0727FFA5218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0727FFA2218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0727FFA6218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0727FFA2218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h */; };
+		0727FFA7218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */ = {isa = PBXBuildFile; fileRef = 0727FFA2218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		0727FFA8218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FFA3218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m */; };
+		0727FFA9218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FFA3218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m */; };
+		0727FFAA218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FFA3218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m */; };
+		0727FFAB218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 0727FFA3218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m */; };
 		073CF2F61E89CBFE006435C2 /* KSOFontAwesomeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0741C19421410CE000B80451 /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C19121410CE000B80451 /* fa-brands-400.ttf */; };
 		0741C19521410CE000B80451 /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C19121410CE000B80451 /* fa-brands-400.ttf */; };
@@ -63,11 +71,11 @@
 		0741C1A121410DAA00B80451 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C19221410CE000B80451 /* fa-regular-400.ttf */; };
 		0741C1A221410DAA00B80451 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C19321410CE000B80451 /* fa-solid-900.ttf */; };
 		0741C1A621410E1000B80451 /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A321410E1000B80451 /* fa-brands-400.ttf */; };
-		0741C1A721410E1000B80451 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A421410E1000B80451 /* fa-regular-400.ttf */; };
-		0741C1A821410E1000B80451 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A521410E1000B80451 /* fa-solid-900.ttf */; };
+		0741C1A721410E1000B80451 /* fa-regular-pro-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A421410E1000B80451 /* fa-regular-pro-400.ttf */; };
+		0741C1A821410E1000B80451 /* fa-solid-pro-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A521410E1000B80451 /* fa-solid-pro-900.ttf */; };
 		0741C1A921410E1D00B80451 /* fa-brands-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A321410E1000B80451 /* fa-brands-400.ttf */; };
-		0741C1AA21410E1D00B80451 /* fa-regular-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A421410E1000B80451 /* fa-regular-400.ttf */; };
-		0741C1AB21410E1D00B80451 /* fa-solid-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A521410E1000B80451 /* fa-solid-900.ttf */; };
+		0741C1AA21410E1D00B80451 /* fa-regular-pro-400.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A421410E1000B80451 /* fa-regular-pro-400.ttf */; };
+		0741C1AB21410E1D00B80451 /* fa-solid-pro-900.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0741C1A521410E1000B80451 /* fa-solid-pro-900.ttf */; };
 		079718AB2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
 		079718AC2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
 		079718AD2059B3B900841EE8 /* strings.json in Resources */ = {isa = PBXBuildFile; fileRef = 079718AA2059B3B900841EE8 /* strings.json */; };
@@ -279,6 +287,8 @@
 		0723C36B1E9422CE0008BA3A /* Stanley.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Stanley.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0723C3741E9423BF0008BA3A /* TableRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableRowController.h; sourceTree = "<group>"; };
 		0723C3751E9423BF0008BA3A /* TableRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableRowController.m; sourceTree = "<group>"; };
+		0727FFA2218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeExtensionsClass.h; sourceTree = "<group>"; };
+		0727FFA3218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSOFontAwesomeExtensionsClass.m; sourceTree = "<group>"; };
 		073CF2F11E89CBFE006435C2 /* KSOFontAwesomeExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KSOFontAwesomeExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		073CF2F41E89CBFE006435C2 /* KSOFontAwesomeExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSOFontAwesomeExtensions.h; sourceTree = "<group>"; };
 		073CF2F51E89CBFE006435C2 /* KSOFontAwesomeExtensions-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KSOFontAwesomeExtensions-iOS-Info.plist"; sourceTree = "<group>"; };
@@ -287,8 +297,8 @@
 		0741C19221410CE000B80451 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
 		0741C19321410CE000B80451 /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid-900.ttf"; sourceTree = "<group>"; };
 		0741C1A321410E1000B80451 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-brands-400.ttf"; sourceTree = "<group>"; };
-		0741C1A421410E1000B80451 /* fa-regular-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-400.ttf"; sourceTree = "<group>"; };
-		0741C1A521410E1000B80451 /* fa-solid-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid-900.ttf"; sourceTree = "<group>"; };
+		0741C1A421410E1000B80451 /* fa-regular-pro-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-regular-pro-400.ttf"; sourceTree = "<group>"; };
+		0741C1A521410E1000B80451 /* fa-solid-pro-900.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-solid-pro-900.ttf"; sourceTree = "<group>"; };
 		079718AA2059B3B900841EE8 /* strings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = strings.json; sourceTree = "<group>"; };
 		079718B02059B4AE00841EE8 /* StringSection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StringSection.h; sourceTree = "<group>"; };
 		079718B12059B4AE00841EE8 /* StringSection.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StringSection.m; sourceTree = "<group>"; };
@@ -436,8 +446,8 @@
 				0723C3491E9422AB0008BA3A /* Assets.xcassets */,
 				0723C34B1E9422AB0008BA3A /* Info.plist */,
 				0741C1A321410E1000B80451 /* fa-brands-400.ttf */,
-				0741C1A421410E1000B80451 /* fa-regular-400.ttf */,
-				0741C1A521410E1000B80451 /* fa-solid-900.ttf */,
+				0741C1A421410E1000B80451 /* fa-regular-pro-400.ttf */,
+				0741C1A521410E1000B80451 /* fa-solid-pro-900.ttf */,
 			);
 			path = "Demo-watchOS";
 			sourceTree = "<group>";
@@ -589,6 +599,8 @@
 				07E83B551E89EB0500824A77 /* KSOFontAwesomeFunctions.m */,
 				07B96E631F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h */,
 				07B96E641F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m */,
+				0727FFA2218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h */,
+				0727FFA3218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -614,6 +626,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0727FFA6218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */,
 				0723C31E1E941C9D0008BA3A /* UIFont+KSOFontAwesomeExtensions.h in Headers */,
 				0723C31D1E941C9D0008BA3A /* KSOFontAwesomeDefines.h in Headers */,
 				07B96E671F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
@@ -634,6 +647,7 @@
 				0723C33C1E9421F80008BA3A /* UIImage+KSOFontAwesomeExtensions.h in Headers */,
 				0723C3371E9421F80008BA3A /* KSOFontAwesomeExtensions.h in Headers */,
 				07B96E681F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
+				0727FFA7218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -641,6 +655,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0727FFA4218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */,
 				07E83B531E89E9F100824A77 /* KSOFontAwesomeDefines.h in Headers */,
 				07B96E651F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
 				07E83B5B1E89EC3700824A77 /* UIFont+KSOFontAwesomeExtensions.h in Headers */,
@@ -661,6 +676,7 @@
 				07A41EA21E8ACF1600F8451F /* NSImage+KSOFontAwesomeExtensions.h in Headers */,
 				07A41E9D1E8ACF1600F8451F /* KSOFontAwesomeExtensions.h in Headers */,
 				07B96E661F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.h in Headers */,
+				0727FFA5218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -946,10 +962,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0741C19E21410DAA00B80451 /* fa-regular-400.ttf in Resources */,
-				0741C1A821410E1000B80451 /* fa-solid-900.ttf in Resources */,
+				0741C1A821410E1000B80451 /* fa-solid-pro-900.ttf in Resources */,
 				0723C34A1E9422AB0008BA3A /* Assets.xcassets in Resources */,
 				0741C19F21410DAA00B80451 /* fa-solid-900.ttf in Resources */,
-				0741C1A721410E1000B80451 /* fa-regular-400.ttf in Resources */,
+				0741C1A721410E1000B80451 /* fa-regular-pro-400.ttf in Resources */,
 				0723C3481E9422AB0008BA3A /* Interface.storyboard in Resources */,
 				0741C1A621410E1000B80451 /* fa-brands-400.ttf in Resources */,
 				079718AE2059B3B900841EE8 /* strings.json in Resources */,
@@ -963,10 +979,10 @@
 				0723C35C1E9422AB0008BA3A /* Assets.xcassets in Resources */,
 				0741C1A221410DAA00B80451 /* fa-solid-900.ttf in Resources */,
 				0741C1A121410DAA00B80451 /* fa-regular-400.ttf in Resources */,
-				0741C1AA21410E1D00B80451 /* fa-regular-400.ttf in Resources */,
+				0741C1AA21410E1D00B80451 /* fa-regular-pro-400.ttf in Resources */,
 				079718AF2059B3B900841EE8 /* strings.json in Resources */,
 				0741C1A921410E1D00B80451 /* fa-brands-400.ttf in Resources */,
-				0741C1AB21410E1D00B80451 /* fa-solid-900.ttf in Resources */,
+				0741C1AB21410E1D00B80451 /* fa-solid-pro-900.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1079,6 +1095,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0723C3261E941CB30008BA3A /* UIButton+KSOFontAwesomeExtensions.m in Sources */,
+				0727FFAA218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */,
 				0723C3271E941CB30008BA3A /* KSOFontAwesomeFunctions.m in Sources */,
 				07B96E6B1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				0723C3251E941CB30008BA3A /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
@@ -1105,6 +1122,7 @@
 				0723C3401E94220C0008BA3A /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
 				07B96E6C1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				0723C3411E94220C0008BA3A /* KSOFontAwesomeFunctions.m in Sources */,
+				0727FFAB218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */,
 				0723C33E1E94220C0008BA3A /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1126,6 +1144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07A41E8C1E8ACC4800F8451F /* UIButton+KSOFontAwesomeExtensions.m in Sources */,
+				0727FFA8218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */,
 				07E83B5C1E89EC3700824A77 /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 				07E83B571E89EB0500824A77 /* KSOFontAwesomeFunctions.m in Sources */,
 				07B96E691F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
@@ -1140,6 +1159,7 @@
 				07A41EA81E8ACF3200F8451F /* KSOFontAwesomeFunctions.m in Sources */,
 				07B96E6A1F93DFE800AE6AAA /* NSBundle+KSOFontAwesomeExtensionsPrivate.m in Sources */,
 				07A41EA71E8ACF3200F8451F /* UIImage-NSImage+KSOFontAwesomeExtensions.m in Sources */,
+				0727FFA9218AFA730048CCF4 /* KSOFontAwesomeExtensionsClass.m in Sources */,
 				07A41EA51E8ACF3200F8451F /* UIFont-NSFont+KSOFontAwesomeExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
