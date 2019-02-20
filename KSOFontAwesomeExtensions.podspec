@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KSOFontAwesomeExtensions'
-  s.version          = '1.5.1'
+  s.version          = '1.5.2'
   s.summary          = 'A collection of categories on NSString, UIFont/NSFont and UIImage/NSImage to make creation of images using the Font Awesome font easier.'
 
 # This description is used to generate tags and improve search results.
