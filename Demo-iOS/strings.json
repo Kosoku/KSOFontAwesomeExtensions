@@ -1,18 +1,18 @@
 {
 	"fontNamesToTitles": {
-		"FontAwesome5BrandsRegular": "Brands",
-		"FontAwesome5FreeRegular": "Regular Free",
-		"FontAwesome5FreeSolid": "Solid Free",
-		"FontAwesome5ProLight": "Light Pro",
-		"FontAwesome5ProRegular": "Regular Pro",
-		"FontAwesome5ProSolid": "Solid Pro"
+		"FontAwesome5Brands-Regular": "Brands",
+		"FontAwesome5Free-Regular": "Regular Free",
+		"FontAwesome5Free-Solid": "Solid Free",
+		"FontAwesome5Pro-Light": "Light Pro",
+		"FontAwesome5Pro-Regular": "Regular Pro",
+		"FontAwesome5Pro-Solid": "Solid Pro"
 	},
 	"order": [
-		"FontAwesome5BrandsRegular",
-		"FontAwesome5FreeRegular",
-		"FontAwesome5FreeSolid",
-		"FontAwesome5ProLight",
-		"FontAwesome5ProRegular",
-		"FontAwesome5ProSolid"
+		"FontAwesome5Brands-Regular",
+		"FontAwesome5Free-Regular",
+		"FontAwesome5Free-Solid",
+		"FontAwesome5Pro-Light",
+		"FontAwesome5Pro-Regular",
+		"FontAwesome5Pro-Solid"
 	]
 }

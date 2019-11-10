@@ -30,12 +30,12 @@
 #import <CoreText/CoreText.h>
 #import <objc/runtime.h>
 
-NSString *const KSOFontAwesomeFontNameRegular = @"FontAwesome5FreeRegular";
-NSString *const KSOFontAwesomeFontNameRegularPro = @"FontAwesome5ProRegular";
-NSString *const KSOFontAwesomeFontNameSolid = @"FontAwesome5FreeSolid";
-NSString *const KSOFontAwesomeFontNameSolidPro = @"FontAwesome5ProSolid";
-NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5BrandsRegular";
-NSString *const KSOFontAwesomeFontNameLight = @"FontAwesome5ProLight";
+NSString *const KSOFontAwesomeFontNameRegular = @"FontAwesome5Free-Regular";
+NSString *const KSOFontAwesomeFontNameRegularPro = @"FontAwesome5Pro-Regular";
+NSString *const KSOFontAwesomeFontNameSolid = @"FontAwesome5Free-Solid";
+NSString *const KSOFontAwesomeFontNameSolidPro = @"FontAwesome5Pro-Solid";
+NSString *const KSOFontAwesomeFontNameBrand = @"FontAwesome5Brands-Regular";
+NSString *const KSOFontAwesomeFontNameLight = @"FontAwesome5Pro-Light";
 
 @implementation KSOFont (KSOFontAwesomeExtensions)
 
@@ -52,7 +52,7 @@ NSString *const KSOFontAwesomeFontNameLight = @"FontAwesome5ProLight";
         }
     };
     
-    for (NSURL *fontURL in [NSBundle.KSO_fontAwesomeExtensionsFrameworkBundle URLsForResourcesWithExtension:@"ttf" subdirectory:nil]) {
+    for (NSURL *fontURL in [NSBundle.KSO_fontAwesomeExtensionsFrameworkBundle URLsForResourcesWithExtension:@"otf" subdirectory:nil]) {
         block(fontURL);
     }
 #endif

@@ -36,6 +36,7 @@
     if (self != StringSection.class) {
         return;
     }
+    
 #if (!TARGET_OS_WATCH)
     void(^block)(NSURL *) = ^(NSURL *fontURL) {
         CFErrorRef outErrorRef;
@@ -48,7 +49,7 @@
         }
     };
     
-    for (NSURL *fontURL in [NSBundle.mainBundle URLsForResourcesWithExtension:@"ttf" subdirectory:@"Fonts"]) {
+    for (NSURL *fontURL in [NSBundle.mainBundle URLsForResourcesWithExtension:@"otf" subdirectory:@"Fonts"]) {
         block(fontURL);
     }
 #endif
