@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'KSOFontAwesomeExtensions'
-  s.version          = '1.6.2'
+  s.version          = '1.6.3'
   s.summary          = 'A collection of categories on NSString, UIFont/NSFont and UIImage/NSImage to make creation of images using the Font Awesome font easier.'
 
 # This description is used to generate tags and improve search results.
@@ -44,13 +44,13 @@ A collection of categories on `NSString`, `UIFont`, `NSFont`, `NSImage`, and `UI
   s.watchos.exclude_files = 'KSOFontAwesomeExtensions/macOS', 'KSOFontAwesomeExtensions/iOS/UIButton+KSOFontAwesomeExtensions.{h,m}'
   
   s.ios.resource_bundles = {
-    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.ttf']
+    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.otf']
   }
   s.osx.resource_bundles = {
-    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.ttf']
+    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.otf']
   }
   s.tvos.resource_bundles = {
-    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.ttf']
+    'KSOFontAwesomeExtensions' => ['KSOFontAwesomeExtensions/*.otf']
   }
 
   s.ios.frameworks = 'Foundation', 'UIKit', 'CoreText'
