@@ -135,7 +135,7 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [self.view addSubview:self.searchField];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[view]-|" options:0 metrics:nil views:@{@"view": self.searchField}]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view]" options:0 metrics:nil views:@{@"view": self.searchField, @"top": self.topLayoutGuide}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top][view]" options:0 metrics:nil views:@{@"view": self.searchField, @"top": self.view.safeAreaLayoutGuide}]];
     
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     
@@ -156,7 +156,7 @@ static CGSize const kItemSize = {.width=64, .height=64};
     [self.view addSubview:self.collectionView];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[view]|" options:0 metrics:nil views:@{@"view": self.collectionView}]];
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top]-[view][bottom]" options:0 metrics:nil views:@{@"view": self.collectionView, @"top": self.searchField, @"bottom": self.bottomLayoutGuide}]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[top]-[view][bottom]" options:0 metrics:nil views:@{@"view": self.collectionView, @"top": self.searchField, @"bottom": self.view.safeAreaLayoutGuide}]];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {

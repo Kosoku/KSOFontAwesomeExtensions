@@ -78,12 +78,10 @@
     CGFloat pointSize = KSOFontAwesomePointSizeAndRectForFontTextAndSize(fontName, text, size, &rect);
     
     if (foregroundColor == nil) {
-        UIColor *defaultColor = [UIColor colorWithRed:0 green:122.0/255.0 blue:1.0 alpha:1.0];
-        
 #if (TARGET_OS_WATCH)
-        foregroundColor = defaultColor;
+        foregroundColor = [UIColor colorWithRed:0 green:122.0/255.0 blue:1.0 alpha:1.0];
 #else
-        foregroundColor = [UIApplication sharedApplication].keyWindow.tintColor ?: defaultColor;
+        foregroundColor = UIColor.systemBlueColor;
 #endif
     }
     
